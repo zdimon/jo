@@ -1,0 +1,4 @@
+[symfony]
+  name=levandos
+  author=Your name here
+  orm=Doctrine

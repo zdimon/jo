@@ -1,0 +1,39 @@
+# # Populate this file with data to be loaded by your ORM's *:data-load task.
+# # You can create multiple files in this directory (i.e. 010_users.yml,
+# # 020_articles.yml, etc) which will be loaded in alphabetical order.
+# # 
+# # See documentation for your ORM's *:data-load task for more information.
+# 
+Testimonials:
+  Testimonials_1:
+    pub: true
+    body: 'test test test test test test test test test test test test test test test test '
+    name: author1
+  Testimonials_2:
+    pub: true
+    body: 'test test test test test test test test test test test test test test test test '
+    name: author2
+  Testimonials_3:
+    pub: true
+    body: 'test test test test test test test test test test test test test test test test '
+    name: author3
+  Testimonials_4:
+    pub: true
+    body: 'test test test test test test test test test test test test test test test test '
+    name: author4
+  Testimonials_5:
+    pub: true
+    body: 'test test test test test test test test test test test test test test test test '
+    name: author5
+  Testimonials_6:
+    pub: true
+    body: 'test test test test test test test test test test test test test test test test '
+    name: author6
+  Testimonials_7:
+    pub: true
+    body: 'test test test test test test test test test test test test test test test test '
+    name: author7
+  Testimonials_8:
+    pub:  true
+    body: 'test test test test test test test test test test test test test test test test '
+    name: author8

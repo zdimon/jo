@@ -1,0 +1,148 @@
+# # Populate this file with data to be loaded by your ORM's *:data-load task.
+# # You can create multiple files in this directory (i.e. 010_users.yml,
+# # 020_articles.yml, etc) which will be loaded in alphabetical order.
+# # 
+# # See documentation for your ORM's *:data-load task for more information.
+# 
+Page:
+  Page_1:
+    alias: mainpage
+    title: 'Main page'
+  Page_2:
+    alias: contact
+    title: 'Contact'
+  Page_3:
+    alias: about    
+    title: 'About Us'    
+  Page_4:
+    alias: services       
+    title: 'Services' 
+  Page_5:
+    alias: terms       
+    title: 'Terms and conditions'    
+  Page_6:
+    alias: register       
+    title: 'Registration'     
+  Page_7:
+    alias: register       
+    title: 'Editing profile'   
+  Page_8:
+    alias: register_partner       
+    title: 'Registration of the agency'     
+  Page_9:
+    alias: register_partner       
+    title: 'Finish of the agency's registration'   
+  Page_10:
+    alias: register_user       
+    title: 'Finishing of the user's registration'     '      
+    
+  
+  
+PageTranslation:
+  PageTranslation_1_ru:
+    lang: 'ru'
+    ititle: 'главная'
+    icontent:  'главная главная главная '
+    Page: Page_1
+  PageTranslation_1_en:
+    lang: 'en'
+    ititle:  'main page'
+    icontent:  'main page main page main page main page main page main page main page main page main page main page main page'    
+    Page: Page_1
+  PageTranslation_2_ru:
+    lang: 'ru'
+    ititle:  'Контакты'
+    icontent:  'текст текст текст текст текст текст текст текст текст текст текст текст текст текст'
+    Page: Page_2
+  PageTranslation_2_en:
+    lang: 'en'
+    ititle:  'contact'
+    icontent:  'text text text text text text text text text text text text text text text text text text text text text text text text '    
+    Page: Page_2
+  PageTranslation_3_ru:
+    lang: 'ru'
+    ititle: 'о нас'
+    icontent:  'текст текст текст текст текст текст текст текст текст текст текст текст текст текст'
+    Page: Page_3
+  PageTranslation_3_en:
+    lang: 'en'
+    ititle: 'About Us'
+    icontent:  'text text text text text text text text text text text text text text text text text text text text text text text text '  
+    Page: Page_3    
+  PageTranslation_4_ru:
+    lang: 'ru'
+    ititle: 'Услуги'
+    icontent:  'текст текст текст текст текст текст текст текст текст текст текст текст текст текст'
+    Page: Page_4
+  PageTranslation_4_en:
+    lang: 'en'
+    ititle: 'Services'
+    icontent:  'text text text text text text text text text text text text text text text text text text text text text text text text '    
+    Page: Page_4
+  
+  PageTranslation_5_ru:
+    lang: 'ru'
+    ititle: 'Пользовательское соглашение'
+    icontent:  'текст текст текст текст текст текст текст текст текст текст текст текст текст текст'
+    Page: Page_5
+  PageTranslation_5_en:
+    lang: 'en'
+    ititle: 'Terms and conditions'
+    icontent:  'text text text text text text text text text text text text text text text text text text text text text text text text '    
+    Page: Page_5  
+    
+  PageTranslation_6_ru:
+    lang: 'ru'
+    ititle: 'Регистрация'
+    icontent:  ' Регистрация Регистрация Регистрация текст текст текст текст текст текст текст текст текст текст текст текст текст текст'
+    Page: Page_6
+  PageTranslation_6_en:
+    lang: 'en'
+    ititle: 'Registration'
+    icontent:  'Registration Registration Registration Registration text text text text text text text text text text text text text text text text text text text text text text text text '    
+    Page: Page_6   
+
+  PageTranslation_7_ru:
+    lang: 'ru'
+    ititle: 'Редактирование профайла'
+    icontent:  ' Редактирование профайла Редактирование профайла Редактирование профайла текст текст текст текст текст текст текст текст текст текст текст текст текст текст'
+    Page: Page_7
+  PageTranslation_7_en:
+    lang: 'en'
+    ititle: 'Edit Profile'
+    icontent:  'Edit Profile Edit Profile Edit Profile Edit Profile text text text text text text text text text text text text text text text text text text text text text text text text '    
+    Page: Page_7 
+    
+  PageTranslation_8_ru:
+    lang: 'ru'
+    ititle: 'Регистрация партнера'
+    icontent:  ' Регистрация партнера  Регистрация партнера Регистрация партнера Регистрация партнератекст текст текст текст текст текст текст текст текст текст текст текст текст текст'
+    Page: Page_8
+  PageTranslation_8_en:
+    lang: 'en'
+    ititle: 'Partner registration'
+    icontent:  'Partner registration Partner registration Partner registration Partner registrationtext text text text text text text text text text text text text text text text text text text text text text text '    
+    Page: Page_8   
+    
+  PageTranslation_9_ru:
+    lang: 'ru'
+    ititle: 'Регистрация партнера завершена'
+    icontent:  ' Регистрация партнера завершена РегисРегистрация партнера завершенарация партнера Регистрация партнератекст текст текст текст текст текст текст текст текст текст текст текст текст текст'
+    Page: Page_9
+  PageTranslation_9_en:
+    lang: 'en'
+    ititle: 'Partner registration done'
+    icontent:  'Partner registration done Partner registration done Partner registration done registration Partner registration Partner registrationtext text text text text text text text text text text text text text text text text text text text text text text '    
+    Page: Page_9 
+
+  PageTranslation_10_ru:
+    lang: 'ru'
+    ititle: 'Регистрация пользователя завершена'
+    icontent:  ' Регистрация пользователя завершена РегисРегистрация пользователя завершенарация пользователя Регистрация пользователя текст текст текст текст текст текст текст текст текст текст текст текст текст'
+    Page: Page_10
+  PageTranslation_10_en:
+    lang: 'en'
+    ititle: 'User registration done'
+    icontent:  'User registration done User registration done User registration done registration User registration Partner registrationtext text text text text text text text text text text text text text text text text text text text text text text '    
+    Page: Page_10    
+    

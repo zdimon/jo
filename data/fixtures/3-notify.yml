@@ -1,0 +1,166 @@
+# # Populate this file with data to be loaded by your ORM's *:data-load task.
+# # You can create multiple files in this directory (i.e. 010_users.yml,
+# # 020_articles.yml, etc) which will be loaded in alphabetical order.
+# # 
+# # See documentation for your ORM's *:data-load task for more information.
+# 
+Notify:
+  Notify_1:
+    title: 'Activation link'
+  Notify_2:
+    title: 'Notification for administratior about registration'    
+  Notify_3:
+    title: 'Notification for user about new message'     
+  Notify_4:
+    title: 'Notification for user about adding to favorite'    
+  Notify_5:
+    title: 'Notification for user about deleting photo'    
+  Notify_6:
+    title: 'Notification for user about deleting video' 
+  Notify_7:
+    title: 'Remind of password'    
+  Notify_8:
+    title: 'Notification for user about sending interest'    
+  Notify_9:
+    title: 'Activation of the Agancy'    
+  Notify_10:
+    title: 'Registration of the Agancy'    
+  Notify_12:
+    title: 'Activation of the user'      
+  
+NotifyTranslation:
+  NotifyTranslation_1_ru:
+    lang: 'ru'
+    ititle: 'Ссылка для активации'
+    icontent:  'Вы зарегистрированы на нашем сайте. Для активации нажмите %link% или скопируйте в браузер %link_char%'
+    Notify: Notify_1
+  NotifyTranslation_1_en:
+    lang: 'en'
+    ititle:  'Activation link'
+    icontent:  'For activate your profile %link% or %link_char%'    
+    Notify: Notify_1
+    
+  NotifyTranslation_2_ru:
+    lang: 'ru'
+    ititle: 'регистрация нового пользователя'
+    icontent:  'На сайте зарегистрирован новый пользователь %id% %login% %password% %partner%.'
+    Notify: Notify_2
+  NotifyTranslation_2_en:
+    lang: 'en'
+    ititle:  'Registration new user'
+    icontent:  'New user was registered %id% %login% %password% %partner%.'    
+    Notify: Notify_2
+    
+  NotifyTranslation_3_ru:
+    lang: 'ru'
+    ititle: 'Уведомление о новом сообщении'
+    icontent:  'Вам пришло новое сообщение от %user% %link% %link_char%.'
+    Notify: Notify_3
+  NotifyTranslation_3_en:
+    lang: 'en'
+    ititle:  'New message was sent'
+    icontent:  'Your have new message from %user% %link% %link_char%.'    
+    Notify: Notify_3  
+    
+  NotifyTranslation_4_ru:
+    lang: 'ru'
+    ititle: 'Уведомление о добавлении в друзья'
+    icontent:  'Вас добавил в фавориты %user% %link% %link_char%.'
+    Notify: Notify_4
+  NotifyTranslation_4_en:
+    lang: 'en'
+    ititle:  'You was added to favorites'
+    icontent:  'You was added to favorites by user %user% %link% %link_char%.'    
+    Notify: Notify_4 
+
+  NotifyTranslation_4_ru:
+    lang: 'ru'
+    ititle: 'Уведомление о добавлении в друзья'
+    icontent:  'Вас добавил в фавориты %user% %link% %link_char%.'
+    Notify: Notify_4
+  NotifyTranslation_4_en:
+    lang: 'en'
+    ititle:  'You was added to favorites'
+    icontent:  'You was added to favorites by user %user% %link% %link_char%.'    
+    Notify: Notify_4
+
+  NotifyTranslation_5_ru:
+    lang: 'ru'
+    ititle: 'Уведомление о удалении фото'
+    icontent:  '<p>Ваше фото было удалено администрацией сайта.</p>'
+    Notify: Notify_5
+  NotifyTranslation_5_en:
+    lang: 'en'
+    ititle:  'Your photo was deleted'
+    icontent:  '<p>Your photo was deleted by the administrator.</p>'    
+    Notify: Notify_5    
+    
+  NotifyTranslation_6_ru:
+    lang: 'ru'
+    ititle: 'Уведомление о удалении видео'
+    icontent:  'Ваше видео было удалено администрацией сайта.'
+    Notify: Notify_6
+  NotifyTranslation_6_en:
+    lang: 'en'
+    ititle:  'Your video was deleted'
+    icontent:  'Your video was deleted.'    
+    Notify: Notify_6     
+    
+  NotifyTranslation_7_ru:
+    lang: 'ru'
+    ititle: 'Забыли пароль?'
+    icontent:  'Ваше логин: %login%, пароль: %password% .'
+    Notify: Notify_7
+  NotifyTranslation_7_en:
+    lang: 'en'
+    ititle:  'Lost password?'
+    icontent:  'Your login: %login%, password: %password% .'
+    Notify: Notify_7    
+    
+  NotifyTranslation_8_ru:
+    lang: 'ru'
+    ititle: 'Виртуальная улыбка'
+    icontent:  'Пользователь %user%, отправил вам виртуальную улыбку %link% %link_char% .'
+    Notify: Notify_8
+  NotifyTranslation_8_en:
+    lang: 'en'
+    ititle:  'Smile'
+    icontent:  '<p>User %user%, sent you a virtual smile %link% %link_char%.</p>'
+    Notify: Notify_8 
+
+  NotifyTranslation_9_ru:
+    lang: 'ru'
+    ititle: 'Ваш профиль партнера активирован'
+    icontent:  'Ваш профиль был активирован администрацией сайта.<br />Ссылка в административную панель %link%<br />. Логин: %login% <br /> Пароль: %password%.'
+    Notify: Notify_9
+  NotifyTranslation_9_en:
+    lang: 'en'
+    ititle:  'Your profile of partner was activated'
+    icontent:  'Your profile of partner was activated.<br />Link in admin panel %link%<br />. Login: %login% <br /> Password: %password%.'
+    Notify: Notify_9  
+
+  NotifyTranslation_10_ru:
+    lang: 'ru'
+    ititle: 'Ваш профиль партнера зарегистрирован'
+    icontent:  'Ваш профиль был зарегистрирован.<br />Для активаци продтите по ссылке %link%<br />. %link_char%'
+    Notify: Notify_10
+  NotifyTranslation_10_en:
+    lang: 'en'
+    ititle:  'Your profile of partner was registered'
+    icontent:  '<p>Your profile of partner was registered.<br />Link to activate %link%<br />. %link_char%</p>'
+    Notify: Notify_10 
+    
+  NotifyTranslation_12_ru:
+    lang: 'ru'
+    ititle: 'Активация профайла'
+    icontent:  'Вас активировали на сайте.'
+    Notify: Notify_12
+  NotifyTranslation_12_en:
+    lang: 'en'
+    ititle:  'Activation profile'
+    icontent:  'Your was activated.'
+    Notify: Notify_12  
+    
+    
+    
+ 

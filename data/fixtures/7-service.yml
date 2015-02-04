@@ -1,0 +1,188 @@
+Service:
+  Service_1:
+    cost: 2
+    comission: 0
+    show_man:     true
+    show_partner: true
+  Service_2:
+    cost: 4
+    comission: 1.5
+    show_man:     true
+    show_partner: true    
+  Service_3:
+    cost: 3
+    comission: 0   
+    show_man:     true
+    show_partner: true    
+  Service_4:
+    cost: 7
+    comission: 1   
+    show_man:     true
+    show_partner: true    
+  Service_5:
+    cost: 20
+    comission: 15
+    show_man:     true
+    show_partner: true    
+  Service_6:
+    cost: 1
+    comission: 0
+    show_man:     true
+    show_partner: true
+    
+  Service_7:
+    cost: 1
+    comission: 0.14   
+    show_man:     true
+    show_partner: true    
+    
+  Service_8:
+    cost: 1
+    comission: 0.14  
+    show_man:     true
+    show_partner: true    
+    
+  Service_9:
+    cost: 0
+    comission: 0
+    show_man:     true
+    show_partner: true    
+
+  Service_10:
+    cost: 0
+    comission: 0  
+    show_man:     true
+    show_partner: true    
+
+  Service_11:
+    cost: 3
+    comission: 2    
+    show_man:     true
+    show_partner: true    
+    
+  Service_12:
+    cost: 3
+    comission: 1     
+    show_man:     true
+    show_partner: true    
+    
+  Service_13:
+    cost: 3
+    comission: 1     
+    show_man:     true
+    show_partner: false    
+  
+ServiceTranslation:
+  ServiceTranslation_1_ru:
+    lang: 'ru'
+    title: 'чтение сообщения'
+    Service: Service_1
+  ServiceTranslation_1_en:
+    lang: 'en'
+    title: 'read letter'
+    Service: Service_1
+  ServiceTranslation_2_ru:
+    lang: 'ru'
+    title: 'отправка сообщения'
+    Service: Service_2
+  ServiceTranslation_2_en:
+    lang: 'en'
+    title: 'send letter'
+    Service: Service_2 
+  ServiceTranslation_3_ru:
+    lang: 'ru'
+    title: 'просмотр приватного фото'
+    Service: Service_3
+  ServiceTranslation_3_en:
+    lang: 'en'
+    title: 'show private photo'
+    Service: Service_3  
+  ServiceTranslation_4_ru:
+    lang: 'ru'
+    title: 'просмотр приватного видео'
+    Service: Service_4
+  ServiceTranslation_4_en:
+    lang: 'en'
+    title: 'show private video'
+    Service: Service_4    
+  ServiceTranslation_5_ru:
+    lang: 'ru'
+    title: 'выкуп контактной информации'
+    Service: Service_5
+  ServiceTranslation_5_en:
+    lang: 'en'
+    title: 'by contact information'
+    Service: Service_5  
+  ServiceTranslation_6_ru:
+    lang: 'ru'
+    title: 'подарок'
+    Service: Service_6
+  ServiceTranslation_6_en:
+    lang: 'en'
+    title: 'gift'
+    Service: Service_6 	
+    
+  ServiceTranslation_7_ru:
+    lang: 'ru'
+    title: 'чат без видео'
+    Service: Service_7
+  ServiceTranslation_7_en:
+    lang: 'en'
+    title: 'chat without video'
+    Service: Service_7
+
+  ServiceTranslation_8_ru:
+    lang: 'ru'
+    title: 'чат с видео'
+    Service: Service_8
+  ServiceTranslation_8_en:
+    lang: 'en'
+    title: 'chat with video'
+    Service: Service_8    
+    
+    
+  ServiceTranslation_9_ru:
+    lang: 'ru'
+    title: 'реальный подарок'
+    Service: Service_9
+  ServiceTranslation_9_en:
+    lang: 'en'
+    title: 'real gift'
+    Service: Service_9  
+
+  ServiceTranslation_10_ru:
+    lang: 'ru'
+    title: 'доставка подарка'
+    Service: Service_10
+  ServiceTranslation_10_en:
+    lang: 'en'
+    title: 'delivery gift'
+    Service: Service_10    
+    
+  ServiceTranslation_11_ru:
+    lang: 'ru'
+    title: 'просмотр видео мужчины'
+    Service: Service_11
+  ServiceTranslation_11_en:
+    lang: 'en'
+    title: 'show man video'
+    Service: Service_11 
+
+  ServiceTranslation_12_ru:
+    lang: 'ru'
+    title: 'чат с видео мужчины'
+    Service: Service_12
+  ServiceTranslation_12_en:
+    lang: 'en'
+    title: 'chat man video'
+    Service: Service_12  
+
+  ServiceTranslation_13_ru:
+    lang: 'ru'
+    title: 'абонемент на сайте'
+    Service: Service_13
+  ServiceTranslation_13_en:
+    lang: 'en'
+    title: 'abonement'
+    Service: Service_13     
+ 

@@ -1,0 +1,10 @@
+jQuery.fn.LiVMenu=function(options){var options=jQuery.extend({menu_w:'100%',podmenu_w:'155px'},options);return this.each(function(){var menu=$(this);var menu_w=menu.outerWidth();var item_first=menu.children('li');var item_first_link=$('a',menu);var item_first_group=$('ul',menu);menu.width(options.menu_w)
+item_first_group.each(function(){$(this).css({left:$(this).closest('li').css("left",0),width:options.podmenu_w})})
+$('ul',$('ul',menu)).css({left:options.podmenu_w})
+item_first_link.bind('mouseenter',function(){var if_link=$(this)
+var if_wrap=if_link.closest('li');var if_group=if_link.next('ul');$('ul',if_wrap.closest('ul')).hide()
+if_group.css({display:'block'})
+$('a',if_wrap.closest('ul')).removeClass('select')
+if_link.addClass('select')});menu.bind('mouseleave',function(){$('a',menu).removeClass('select')
+$('ul',menu).hide()})
+menu.children('li:last').addClass('last');item_first_group.each(function(){$(this).children('li:last').addClass('last');})});};

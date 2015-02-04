@@ -1,0 +1,616 @@
+ProfileType:
+  ProfileType_1:
+    Translation:
+      ru:
+        title: активные
+      en: 
+        title: active    
+  ProfileType_2:
+    Translation:
+      ru:
+        title: не подтвержденные
+      en: 
+        title: no approve   
+  ProfileType_3:
+    Translation:
+      ru:
+        title: не активные
+      en: 
+        title: not active   
+  ProfileType_4:
+    Translation:
+      ru:
+        title: на деактивацию
+      en: 
+        title: on deactivate   
+  ProfileType_5:  
+    Translation:
+      ru:
+        title: на удаление
+      en: 
+        title: on delete  
+  ProfileType_6:  
+    Translation:
+      ru:
+        title: привелигированные
+      en: 
+        title: admins    
+
+  ProfileType_7:  
+    Translation:
+      ru:
+        title: истек срок абонемента
+      en: 
+        title: abonement expire         
+
+
+sfGuardPermission:
+  sfGuardPermission_1:
+    name: 'partner'
+  sfGuardPermission_2:
+    name: 'redaktor'   
+  sfGuardPermission_3:
+    name: 'admin'      
+
+sfGuardUser:
+  sfGuardUser_1:
+    username:       admin
+    password:       1q2w3e
+    is_super_admin: true
+    is_active:      true
+    email:          'zdimon77@gmail.com'
+    gender:  m
+    culture: ru
+    real_name: admin
+        
+  sfGuardUser_2:
+    username:       partner
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:      true
+    email:          'zdimon7@gmail.com'
+    gender:  m
+    culture: en
+    real_name: partner
+    
+  sfGuardUser_3:
+    username:       girl1
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w 
+    culture: en
+    real_name: girl1
+    is_online:  1
+
+  sfGuardUser_4:
+    username:       girl2
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl2
+    is_online:  1
+
+  sfGuardUser_5:
+    username:       man
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     1
+    email:          'zdimon7@gmail.com'
+    gender:  m	
+    culture: en
+    real_name: man
+    account: 100
+    date_expire: '2011-01-06'
+    
+  sfGuardUser_6:
+    username:       partner2
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     true
+    email:          'zdimon7@gmail.com'
+    gender:  m	
+    culture: en
+    real_name: partner2
+    
+  sfGuardUser_7:
+    username:       man2
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    email:          'zdimon7@gmail.com'
+    gender:  m	
+    culture: en
+    real_name: man2
+    date_expire: '2011-01-06'
+
+  sfGuardUser_8:
+    username:       girl8
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl8
+
+  sfGuardUser_9:
+    username:       girl9
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl9
+
+  sfGuardUser_10:
+    username:       girl10
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl10
+
+  sfGuardUser_11:
+    username:       girl11
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl11
+    is_online:  1
+    
+  sfGuardUser_12:
+    username:       redaktor
+    real_name:      redaktor
+    password:       111
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     1
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    
+  sfGuardUser_13:
+    username:       adm
+    real_name:      adm
+    password:       111
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     1
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+
+  sfGuardUser_14:
+    username:       girl14
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl11
+    is_online:  1
+
+  sfGuardUser_15:
+    username:       girl15
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl11
+    is_online:  0
+
+  sfGuardUser_16:
+    username:       girl16
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl11
+    is_online:  0
+
+
+  sfGuardUser_17:
+    username:       girl17
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl11
+    is_online:  1
+
+  sfGuardUser_18:
+    username:       girl18
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl11
+    is_online:  1
+
+  sfGuardUser_19:
+    username:       girl19
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl11
+    is_online:  1
+
+  sfGuardUser_20:
+    username:       girl20
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     2
+    email:          'zdimon7@gmail.com'
+    gender:  w   
+    culture: en
+    real_name: girl11
+    is_online:  1
+
+  sfGuardUser_21:
+    username:       man1
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     1
+    email:          'zdimon7@gmail.com'
+    gender:  m	
+    culture: en
+    real_name: man
+    account: 100
+    date_expire: '2011-01-06'
+
+  sfGuardUser_22:
+    username:       man3
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     1
+    email:          'zdimon7@gmail.com'
+    gender:  m	
+    culture: en
+    real_name: man
+    account: 100
+    date_expire: '2011-01-06'
+
+  sfGuardUser_23:
+    username:       man4
+    password:       1q2w3e
+    is_super_admin: false
+    is_active:      true
+    is_partner:     false
+    partner_id:     1
+    email:          'zdimon7@gmail.com'
+    gender:  m	
+    culture: en
+    real_name: Denis
+    account: 100
+    date_expire: '2011-01-06'
+
+Profile:
+  Profile_1:
+    first_name: admin_first  
+    real_name: admin
+    sfGuardUser: sfGuardUser_1 
+    is_active:      true
+    gender:  m
+    city: Odessa
+    country: UA
+    birthday: '1976-01-01'
+    status_id: 1
+    can_resive_gift: 1    
+
+  Profile_2:
+    first_name: girl1  
+    real_name: girl1
+    sfGuardUser: sfGuardUser_3
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1975-01-01'
+    status_id: 1  
+    partner_id: 2   
+    can_resive_gift: 1    
+
+  Profile_3:
+    first_name: girl2  
+    real_name: girl2
+    sfGuardUser: sfGuardUser_4
+    is_active:      true
+    birthday: '1974-01-01'
+    country: UA
+    gender:  w
+    status_id: 1 
+    partner_id: 2
+    can_resive_gift: 1
+    
+  Profile_4:
+    first_name: man  
+    real_name: man
+    sfGuardUser: sfGuardUser_5
+    is_active:      true
+    gender:  m
+    city: Odessa
+    country: UA
+    birthday: '1973-01-01'
+    status_id: 1   
+    can_resive_gift: 1    
+    
+  Profile_5:
+    first_name: man2  
+    real_name: man2
+    sfGuardUser: sfGuardUser_7
+    is_active:      true
+    gender:  m   
+    city: Odessa
+    country: UA
+    birthday: '1972-01-01'
+    status_id: 1 
+    can_resive_gift: 1
+    
+  Profile_6:
+    first_name: girl_8
+    real_name: girl8    
+    sfGuardUser: sfGuardUser_8 
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1971-01-01'
+    status_id: 1   
+    can_resive_gift: 1
+    
+  Profile_7:
+    first_name: girl_9  
+    real_name: girl9
+    sfGuardUser: sfGuardUser_9 
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1983-01-01'
+    status_id: 1
+    can_resive_gift: 1
+    
+  Profile_8:
+    first_name: girl_10  
+    real_name: girl10
+    sfGuardUser: sfGuardUser_10
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1980-01-01'
+    status_id: 1   
+    can_resive_gift: 1    
+    
+  Profile_9:
+    first_name: girl11 
+    real_name: girl11
+    sfGuardUser: sfGuardUser_11 
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+    
+  Profile_10:
+    first_name: redaktor 
+    real_name: redaktor
+    sfGuardUser: sfGuardUser_12
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 6
+    can_resive_gift: 1
+    
+  Profile_11:
+    first_name: adm 
+    real_name: adm
+    sfGuardUser: sfGuardUser_13
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 6
+
+  Profile_14:
+    first_name: girl14 
+    real_name: girl14
+    sfGuardUser: sfGuardUser_14 
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+
+  Profile_15:
+    first_name: girl15 
+    real_name: girl15
+    sfGuardUser: sfGuardUser_15 
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+    
+
+  Profile_16:
+    first_name: girl16
+    real_name: girl16
+    sfGuardUser: sfGuardUser_16
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1972-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+
+
+
+  Profile_17:
+    first_name: girl17
+    real_name: girl17
+    sfGuardUser: sfGuardUser_17
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+
+  Profile_18:
+    first_name: girl18
+    real_name: girl18
+    sfGuardUser: sfGuardUser_18
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1962-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+
+  Profile_19:
+    first_name: girl19
+    real_name: girl19
+    sfGuardUser: sfGuardUser_19 
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+
+  Profile_20:
+    first_name: girl20 
+    real_name: girl20
+    sfGuardUser: sfGuardUser_20
+    is_active:      true
+    gender:  w
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+
+
+  Profile_21:
+    first_name: Oleg 
+    real_name: Oleg
+    sfGuardUser: sfGuardUser_21
+    is_active:      true
+    gender:  m
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+
+  Profile_22:
+    first_name: Jo 
+    real_name: Jo
+    sfGuardUser: sfGuardUser_22
+    is_active:      true
+    gender:  m
+    city: Odessa
+    country: UA
+    birthday: '1982-01-01'
+    status_id: 1    
+    can_resive_gift: 1
+
+
+
+
+
+
+sfGuardUserPermission:
+  sfGuardUserPermission_1:
+    User:   sfGuardUser_2
+    Permission:  sfGuardPermission_1   
+  sfGuardUserPermission_2:
+    User:   sfGuardUser_6
+    Permission:  sfGuardPermission_1   
+  sfGuardUserPermission_3:
+    User:   sfGuardUser_6
+    Permission:  sfGuardPermission_2        
+  sfGuardUserPermission_6:
+    User:   sfGuardUser_12
+    Permission:  sfGuardPermission_2   
+  sfGuardUserPermission_7:
+    User:   sfGuardUser_13
+    Permission:  sfGuardPermission_3    
+  sfGuardUserPermission_8:
+    User:   sfGuardUser_13
+    Permission:  sfGuardPermission_2     
+    

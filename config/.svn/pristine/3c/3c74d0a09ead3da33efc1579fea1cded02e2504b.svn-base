@@ -1,0 +1,35 @@
+<?php
+
+require_once 'D:/sflib/sflib116/lib/autoload/sfCoreAutoload.class.php';
+sfCoreAutoload::register();
+
+class ProjectConfiguration extends sfProjectConfiguration
+{
+  public function setup()
+  {
+    $this->enablePlugins('sfDoctrinePlugin');
+    $this->enablePlugins('sfDoctrineGuardPlugin');   
+    $this->enablePlugins('mgI18nPlugin');
+    $this->enablePlugins('sfCKEditorPlugin');
+    $this->enablePlugins('sfImageTransformPlugin');
+    $this->enablePlugins('sfAdminThemejRollerPlugin');
+    $this->enablePlugins('sfFormExtraPlugin');
+    $this->enablePlugins('sfJqueryReloadedPlugin');
+    $this->enablePlugins('sfSwfObjectHelperPlugin');
+
+
+    $this->enablePlugins('sfJQueryUIPlugin');
+    $this->enablePlugins('sfPaymentPlugin');
+    $this->enablePlugins('sfPaymentPayPalPlugin');
+    $this->enablePlugins('sfCacheTaggingPlugin');
+    $this->enablePlugins('sfTagedCachePlugin');
+
+     $this->enablePlugins('sfWebBrowserPlugin');
+
+    $this->enablePlugins('sfDateTimePlugin');
+    $this->enablePlugins('sfThumbnailPlugin');
+	$this->enablePlugins('sfCaptchaGDPlugin');
+    $this->enablePlugins('sfDoctrineForumPlugin');
+
+  }
+}

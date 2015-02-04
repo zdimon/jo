@@ -1,0 +1,17 @@
+Friend:
+  Friend_1:
+    user_id:    5
+    friend_id:  10
+    status_id:  6
+  Friend_2:
+    user_id:    5
+    friend_id:  11
+    status_id:  6
+  Friend_3:
+    user_id:    5
+    friend_id:  12
+    status_id:  6
+  Friend_4:
+    user_id:    10
+    friend_id:  5
+    status_id:  6

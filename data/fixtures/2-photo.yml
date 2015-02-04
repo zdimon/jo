@@ -1,0 +1,193 @@
+Photo:
+  Photo_1:
+    user_id: 3
+    partner_id: 1
+    image: demo.jpg
+    pub: true
+    is_main: true
+    is_private: false
+  Photo_2:
+    user_id: 2
+    partner_id: 1
+    image: demo.jpg
+    pub: true
+    is_main: true
+    is_private: false
+  Photo_3:
+    user_id: 6
+    partner_id: 1
+    image: demo1.jpg
+    pub: true
+    is_main: true
+    is_private: false
+  Photo_4:
+    user_id: 7
+    partner_id: 1
+    image: demo2.jpg
+    pub: true
+    is_main: true
+    is_private: false
+  Photo_5:
+    user_id: 8
+    partner_id: 1
+    image: demo3.jpg
+    pub: true
+    is_main: true
+    is_private: false
+  Photo_6:
+    user_id: 9
+    partner_id: 1
+    image: demo4.jpg
+    pub: true
+    is_main: true
+    is_private: false
+  Photo_7:
+    user_id: 11
+    partner_id: 1
+    image: demo5.jpg
+    pub: true
+    is_main: true
+    is_private: false
+  Photo_8:
+    user_id: 10
+    partner_id: 1
+    image: demo6.jpg
+    pub: true
+    is_main: true
+    is_private: false
+  Photo_9:
+    user_id: 4
+    partner_id: 1
+    image: demo7.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+  Photo_10:
+    user_id: 14
+    partner_id: 1
+    image: demo8.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+  Photo_11:
+    user_id: 15
+    partner_id: 1
+    image: demo1.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+  Photo_12:
+    user_id: 16
+    partner_id: 1
+    image: demo2.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+  Photo_13:
+    user_id: 17
+    partner_id: 1
+    image: demo3.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+  Photo_14:
+    user_id: 18
+    partner_id: 1
+    image: demo4.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+  Photo_15:
+    user_id: 19
+    partner_id: 1
+    image: demo5.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+  Photo_16:
+    user_id: 20
+    partner_id: 1
+    image: demo6.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+
+  Photo_17:
+    user_id: 3
+    partner_id: 1
+    image: demo6.jpg
+    pub: true
+    is_main: false
+    is_private: false
+
+  Photo_18:
+    user_id: 3
+    partner_id: 1
+    image: demo5.jpg
+    pub: true
+    is_main: false
+    is_private: false
+
+  Photo_19:
+    user_id: 3
+    partner_id: 1
+    image: demo7.jpg
+    pub: true
+    is_main: false
+    is_private: false
+
+  Photo_20:
+    user_id: 3
+    partner_id: 1
+    image: demo3.jpg
+    pub: true
+    is_main: false
+    is_private: false
+
+  Photo_21:
+    user_id: 3
+    partner_id: 1
+    image: demo2.jpg
+    pub: true
+    is_main: false
+    is_private: false
+
+  Photo_22:
+    user_id: 3
+    partner_id: 1
+    image: demo1.jpg
+    pub: true
+    is_main: false
+    is_private: false
+
+  Photo_23:
+    user_id: 5
+    partner_id: 1
+    image: demo9.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+  Photo_24:
+    user_id: 5
+    partner_id: 1
+    image: demo10.jpg
+    pub: true
+    is_main: true
+    is_private: false
+
+  Photo_25:
+    user_id: 5
+    partner_id: 1
+    image: demo9.jpg
+    pub: true
+    is_main: true
+    is_private: false

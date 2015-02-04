@@ -1,0 +1,1207 @@
+sfGuardGroup:
+  actAs:
+    Timestampable: {  }
+  columns:
+    name:
+      type: string
+      unique: true
+      length: '255'
+    description:
+      type: string
+      length: '1000'
+  relations:
+    Users:
+      class: sfGuardUser
+      refClass: sfGuardUserGroup
+      local: group_id
+      foreign: user_id
+      foreignAlias: Groups
+    Permissions:
+      class: sfGuardPermission
+      local: group_id
+      foreign: permission_id
+      refClass: sfGuardGroupPermission
+      foreignAlias: Groups
+  package: sfDoctrineGuardPlugin.lib.model.doctrine
+  package_custom_path: /var/www/ourfeeling14/plugins/sfDoctrineGuardPlugin/lib/model/doctrine
+sfGuardPermission:
+  actAs:
+    Timestampable: {  }
+  columns:
+    name:
+      type: string
+      unique: true
+      length: '255'
+    description:
+      type: string
+      length: '1000'
+  package: sfDoctrineGuardPlugin.lib.model.doctrine
+  package_custom_path: /var/www/ourfeeling14/plugins/sfDoctrineGuardPlugin/lib/model/doctrine
+sfGuardGroupPermission:
+  options:
+    symfony:
+      form: false
+      filter: false
+  actAs:
+    Timestampable: {  }
+  columns:
+    group_id:
+      type: integer
+      primary: true
+    permission_id:
+      type: integer
+      primary: true
+  relations:
+    Group:
+      class: sfGuardGroup
+      local: group_id
+      onDelete: CASCADE
+    Permission:
+      class: sfGuardPermission
+      local: permission_id
+      onDelete: CASCADE
+  package: sfDoctrineGuardPlugin.lib.model.doctrine
+  package_custom_path: /var/www/ourfeeling14/plugins/sfDoctrineGuardPlugin/lib/model/doctrine
+sfGuardUser:
+  actAs:
+    Timestampable: {  }
+  columns:
+    username:
+      type: string
+      notnull: false
+      unique: true
+      length: '128'
+    password:
+      type: string
+      length: '128'
+    algorithm:
+      type: string
+      default: sha1
+      notnull: true
+      length: '128'
+    salt:
+      type: string
+      length: '128'
+    real_name:
+      type: string
+      notnull: false
+      length: '128'
+    is_active:
+      type: boolean
+      default: false
+    is_partner:
+      type: boolean
+      default: false
+    partner_id:
+      type: integer
+      default: 1
+    is_super_admin:
+      type: boolean
+      default: false
+    last_login:
+      type: timestamp
+    pc:
+      type: string
+      length: '128'
+    gender:
+      type: enum
+      values: [m, w]
+      default: w
+    culture:
+      type: string
+      length: '2'
+    account:
+      type: decimal
+      scale: 2
+      default: 0
+    image:
+      type: string
+      length: '250'
+    is_online:
+      type: boolean
+      default: false
+    timer:
+      type: integer
+      length: '4'
+    email:
+      type: string
+      email: true
+      notnull: true
+      length: '255'
+    is_agree:
+      type: boolean
+      default: false
+    date_expire:
+      type: date
+  indexes:
+    is_active_idx:
+      fields: [is_active]
+    email:
+      fields: [email]
+    username:
+      fields: [username]
+    is_online:
+      fields: [is_online]
+  relations:
+    Groups:
+      class: sfGuardGroup
+      local: user_id
+      foreign: group_id
+      refClass: sfGuardUserGroup
+      foreignAlias: Users
+    Permissions:
+      class: sfGuardPermission
+      local: user_id
+      foreign: permission_id
+      refClass: sfGuardUserPermission
+      foreignAlias: Users
+  package: sfDoctrineGuardPlugin.lib.model.doctrine
+  package_custom_path: /var/www/ourfeeling14/plugins/sfDoctrineGuardPlugin/lib/model/doctrine
+sfGuardUserPermission:
+  options:
+    symfony:
+      form: false
+      filter: false
+  actAs:
+    Timestampable: {  }
+  columns:
+    user_id:
+      type: integer
+      primary: true
+    permission_id:
+      type: integer
+      primary: true
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+    Permission:
+      class: sfGuardPermission
+      local: permission_id
+      onDelete: CASCADE
+  package: sfDoctrineGuardPlugin.lib.model.doctrine
+  package_custom_path: /var/www/ourfeeling14/plugins/sfDoctrineGuardPlugin/lib/model/doctrine
+sfGuardUserGroup:
+  options:
+    symfony:
+      form: false
+      filter: false
+  actAs:
+    Timestampable: {  }
+  columns:
+    user_id:
+      type: integer
+      primary: true
+    group_id:
+      type: integer
+      primary: true
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      onDelete: CASCADE
+    Group:
+      class: sfGuardGroup
+      local: group_id
+      onDelete: CASCADE
+  package: sfDoctrineGuardPlugin.lib.model.doctrine
+  package_custom_path: /var/www/ourfeeling14/plugins/sfDoctrineGuardPlugin/lib/model/doctrine
+sfGuardRememberKey:
+  options:
+    symfony:
+      form: false
+      filter: false
+  actAs:
+    Timestampable: {  }
+  columns:
+    user_id:
+      type: integer
+    remember_key:
+      type: string
+      length: '32'
+    ip_address:
+      type: string
+      length: '50'
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      foreignAlias: RememberKeys
+      foreignType: one
+      onDelete: CASCADE
+  package: sfDoctrineGuardPlugin.lib.model.doctrine
+  package_custom_path: /var/www/ourfeeling14/plugins/sfDoctrineGuardPlugin/lib/model/doctrine
+sfGuardForgotPassword:
+  options:
+    symfony:
+      form: false
+      filter: false
+  actAs:
+    Timestampable: {  }
+  columns:
+    user_id:
+      type: integer
+      notnull: true
+    unique_key:
+      type: string
+      length: '255'
+    expires_at:
+      type: timestamp
+      notnull: true
+  relations:
+    User:
+      class: sfGuardUser
+      local: user_id
+      type: one
+      foreignType: one
+      foreignAlias: ForgotPassword
+      onDelete: CASCADE
+  package: sfDoctrineGuardPlugin.lib.model.doctrine
+  package_custom_path: /var/www/ourfeeling14/plugins/sfDoctrineGuardPlugin/lib/model/doctrine
+Settings:
+  tableName: jo_settings
+  columns:
+    var_name:
+      type: string
+      length: '250'
+    var_value:
+      type: string
+      length: '250'
+    var_description:
+      type: string
+      length: '250'
+    pub:
+      type: boolean
+      default: false
+Profile:
+  tableName: jo_profile
+  actAs:
+    Timestampable: null
+    Cachetaggable: null
+  columns:
+    user_id:
+      type: integer
+    first_name:
+      type: string
+      length: '255'
+    last_name:
+      type: string
+      length: '255'
+    middle_name:
+      type: string
+      length: '255'
+    real_name:
+      type: string
+      length: '255'
+    gender:
+      type: enum
+      values: [m, w]
+      default: w
+    city:
+      type: string
+      length: '250'
+    country:
+      type: string
+      length: '2'
+    zip:
+      type: string
+      length: '20'
+    adress:
+      type: string
+      length: '250'
+    phone:
+      type: string
+      length: '250'
+    birthday:
+      type: date
+    height:
+      type: string
+      length: '250'
+    body_type:
+      type: string
+      length: '250'
+    relationship:
+      type: string
+      length: '250'
+    rost:
+      type: string
+      length: '250'
+    ves:
+      type: string
+      length: '250'
+    ethnicity:
+      type: string
+      length: '50'
+    religion:
+      type: string
+      length: '100'
+    marital_status:
+      type: string
+      length: '50'
+    children:
+      type: string
+      length: '250'
+    where_children:
+      type: string
+      length: '250'
+    want_children:
+      type: string
+      length: '250'
+    im:
+      type: string
+      length: '250'
+    occupation:
+      type: string
+      length: '250'
+    language1:
+      type: string
+      length: '50'
+    language_skill1:
+      type: string
+      length: '250'
+    language2:
+      type: string
+      length: '50'
+    language_skill2:
+      type: string
+      length: '250'
+    language3:
+      type: string
+      length: '50'
+    language_skill3:
+      type: string
+      length: '250'
+    education:
+      type: string
+      length: '100'
+    income:
+      type: string
+      length: '250'
+    smoker:
+      type: string
+      length: '250'
+    drinker:
+      type: string
+      length: '250'
+    headline:
+      type: string
+      length: '250'
+    description:
+      type: string
+      length: '25000'
+    i_can_receive:
+      type: string
+      length: '250'
+    i_look_for_a:
+      type: string
+      length: '250'
+    looking_for_age_from:
+      type: integer
+    looking_for_age_to:
+      type: integer
+    looking_for_a_height_from:
+      type: string
+      length: '250'
+    looking_for_a_height_to:
+      type: string
+      length: '250'
+    looking_for_a_body_type_from:
+      type: string
+      length: '250'
+    looking_for_a_body_type_to:
+      type: string
+      length: '250'
+    ideal_match_description:
+      type: string
+      length: '2500'
+    notify_me_about_news:
+      type: boolean
+      default: true
+    mobile_phone:
+      type: string
+      length: '250'
+    photo:
+      type: string
+      length: '250'
+    hair_lenght:
+      type: string
+      length: '250'
+    hair_color:
+      type: string
+      length: '250'
+    eye_color:
+      type: string
+      length: '250'
+    hobbies:
+      type: string
+      length: '2500'
+    weight:
+      type: integer
+    looking_for:
+      type: string
+      length: '5'
+    looking_for_role:
+      type: string
+      length: '50'
+    contact_lenses:
+      type: boolean
+      default: false
+    cred_num:
+      type: string
+      length: '250'
+    cred_date:
+      type: date
+    cred_cvv:
+      type: string
+      length: '250'
+    cred_person:
+      type: string
+      length: '250'
+    is_active:
+      type: boolean
+      default: false
+    is_new_message:
+      type: boolean
+      default: false
+    is_new_friend:
+      type: boolean
+      default: false
+    is_new_request:
+      type: boolean
+      default: false
+    is_new_gift:
+      type: boolean
+      default: false
+    is_new_hotlist:
+      type: boolean
+      default: false
+    is_empty:
+      type: boolean
+      default: true
+    is_online:
+      type: boolean
+      default: false
+    with_photo:
+      type: boolean
+      default: false
+    with_video:
+      type: boolean
+      default: false
+    subtype:
+      type: enum
+      values: [none, top100, bikini]
+      default: none
+    most_active_user:
+      type: integer
+    status_id:
+      type: integer
+      length: '4'
+    homepage:
+      type: string
+      length: '250'
+    phone2:
+      type: string
+      length: '250'
+    icq:
+      type: string
+      length: '250'
+    msn:
+      type: string
+      length: '250'
+    skype:
+      type: string
+      length: '250'
+    zodiac:
+      type: integer
+      length: '2'
+    partner_id:
+      type: integer
+      length: '4'
+    can_resive_gift:
+      type: boolean
+      default: false
+    skan:
+      type: string
+      length: '250'
+    rating:
+      type: integer
+      length: '4'
+    packet_id:
+      type: integer
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignType: one
+    Status:
+      local: status_id
+      onDelete: CASCADE
+      foreign: id
+      class: ProfileType
+    Packet:
+      local: packet_id
+      onDelete: CASCADE
+      foreign: id
+      class: ProfilePacket
+  indexes:
+    partner_id:
+      fields: [partner_id]
+ProfileType:
+  tableName: jo_profile_type
+  actAs:
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    title:
+      type: string
+      length: '250'
+    description:
+      type: string
+      length: '2500'
+ProfilePacket:
+  tableName: jo_profile_packet
+  actAs:
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    title:
+      type: string
+      length: '250'
+    description:
+      type: string
+      length: '2500'
+    cucssu:
+      type: string
+      length: '2500'
+Photo:
+  tableName: jo_photo
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    user_id:
+      type: integer
+    username:
+      type: string
+      length: '50'
+    title:
+      type: string
+      length: '50'
+    image:
+      type: string
+      length: '250'
+    pub:
+      type: boolean
+      default: false
+    is_main:
+      type: boolean
+      default: false
+    is_private:
+      type: boolean
+      default: false
+    size:
+      type: integer
+      length: '11'
+    partner_id:
+      type: integer
+  relations:
+    User:
+      local: user_id
+      onDelete: CASCADE
+      foreign: id
+      class: sfGuardUser
+    Partner:
+      local: partner_id
+      onDelete: CASCADE
+      foreign: id
+      class: sfGuardUser
+Video:
+  tableName: jo_video
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    user_id:
+      type: integer
+    username:
+      type: string
+      length: '50'
+    title:
+      type: string
+      length: '50'
+    file_path:
+      type: string
+      length: '250'
+    pub:
+      type: boolean
+      default: false
+    size:
+      type: integer
+      length: '11'
+    description:
+      type: string
+      length: '250'
+    format:
+      type: string
+      length: '50'
+    is_convert:
+      type: boolean
+      default: false
+    partner_id:
+      type: integer
+  relations:
+    User:
+      local: user_id
+      onDelete: CASCADE
+      foreign: id
+      class: sfGuardUser
+    Partner:
+      local: partner_id
+      onDelete: CASCADE
+      foreign: id
+      class: sfGuardUser
+Message:
+  tableName: jo_message
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    from_id:
+      type: integer
+    from_username:
+      type: string
+      length: '50'
+    to_id:
+      type: integer
+    to_username:
+      type: string
+      length: '50'
+    from_partner_id:
+      type: integer
+    to_partner_id:
+      type: integer
+    title:
+      type: string
+      length: '100'
+    content:
+      type: string
+      length: '2500'
+    translate:
+      type: string
+      length: '2500'
+    image:
+      type: string
+      length: '250'
+    reply_id:
+      type: integer
+      length: '4'
+    type_message:
+      type: enum
+      values: [smile, message, first]
+      default: message
+    pub:
+      type: boolean
+      default: true
+    is_read:
+      type: boolean
+      default: false
+    is_reply:
+      type: boolean
+      default: false
+    del_from:
+      type: boolean
+      default: false
+    del_to:
+      type: boolean
+      default: false
+  relations:
+    FromUser:
+      local: from_id
+      onDelete: CASCADE
+      foreign: id
+      class: sfGuardUser
+    ToUser:
+      local: to_id
+      onDelete: CASCADE
+      foreign: id
+      class: sfGuardUser
+  indexes:
+    to_username:
+      fields: [to_username]
+    from_username:
+      fields: [from_username]
+    reply_id:
+      fields: [reply_id]
+    type_message:
+      fields: [type_message]
+Friend:
+  tableName: jo_friend
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    user_id:
+      type: integer
+    friend_id:
+      type: integer
+    status_id:
+      type: integer
+      length: '4'
+    del_user:
+      type: boolean
+      default: false
+    del_friend:
+      type: boolean
+      default: false
+    is_read_user:
+      type: boolean
+      default: false
+    is_read_friend:
+      type: boolean
+      default: false
+    contact:
+      type: string
+      length: '10000'
+    from_partner_id:
+      type: integer
+    to_partner_id:
+      type: integer
+    request_video:
+      type: boolean
+      default: false
+    accept_video:
+      type: boolean
+      default: false
+    read_accept:
+      type: boolean
+      default: false
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Friend:
+      local: friend_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Status:
+      local: status_id
+      foreign: id
+      onDelete: CASCADE
+      class: StatusFriend
+  indexes:
+    is_read_user:
+      fields: [is_read_user]
+    is_read_friend:
+      fields: [is_read_friend]
+StatusFriend:
+  tableName: jo_status_friend
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    title:
+      type: string
+      length: '100'
+Page:
+  tableName: jo_page
+  actAs:
+    I18n:
+      fields: [icontent, ititle]
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    alias:
+      type: string
+      length: '250'
+    title:
+      type: string
+      length: '250'
+    icontent:
+      type: string
+      length: '100000'
+    ititle:
+      type: string
+      length: '250'
+    undel:
+      type: boolean
+      default: false
+Testimonials:
+  tableName: jo_testimonials
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    body:
+      type: string
+      length: '2500'
+    image:
+      type: string
+      length: '250'
+    name:
+      type: string
+      length: '250'
+    pub:
+      type: boolean
+      default: false
+Service:
+  tableName: jo_service
+  actAs:
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    title:
+      type: string
+      length: '250'
+    description:
+      type: string
+      length: '2500'
+    cost:
+      type: decimal
+      scale: 2
+    comission:
+      type: decimal
+      scale: 2
+    pub:
+      type: boolean
+      default: true
+    show_man:
+      type: boolean
+      default: false
+    show_partner:
+      type: boolean
+      default: false
+Notify:
+  tableName: jo_notify
+  actAs:
+    I18n:
+      fields: [icontent, ititle]
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    title:
+      type: string
+      length: '250'
+    icontent:
+      type: string
+      length: '100000'
+    ititle:
+      type: string
+      length: '250'
+    file:
+      type: string
+      length: '250'
+News:
+  tableName: jo_news
+  actAs:
+    Timestampable: null
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    title:
+      type: string
+      length: '250'
+    description:
+      type: string
+      length: '2500'
+    image:
+      type: string
+      length: '250'
+    pub:
+      type: boolean
+      default: false
+Faq:
+  tableName: jo_faq
+  actAs:
+    Timestampable: null
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    title:
+      type: string
+      length: '250'
+    description:
+      type: string
+      length: '2500'
+    pub:
+      type: boolean
+      default: false
+Payment:
+  tableName: jo_payment
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    service_id:
+      type: integer
+      length: '4'
+    user_id:
+      type: integer
+    woman_id:
+      type: integer
+    username:
+      type: string
+      length: '50'
+    partner_id:
+      type: integer
+    room_id:
+      type: integer
+    summa:
+      type: decimal
+      scale: 2
+    balanse:
+      type: decimal
+      scale: 2
+    comission:
+      type: decimal
+      scale: 2
+    title:
+      type: string
+      length: '250'
+    description:
+      type: string
+      length: '2500'
+    cost:
+      type: decimal
+      scale: 2
+    is_closed:
+      type: boolean
+      default: true
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Partner:
+      local: partner_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Woman:
+      local: woman_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Service:
+      local: service_id
+      foreign: id
+      onDelete: CASCADE
+      class: Service
+Hotlist:
+  tableName: jo_hotlist
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    from_id:
+      type: integer
+    to_id:
+      type: integer
+    last_message_id:
+      type: integer
+      length: '4'
+    is_new_message:
+      type: boolean
+      default: false
+    is_opened:
+      type: boolean
+      default: false
+  relations:
+    FromUser:
+      local: from_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    ToUser:
+      local: to_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    LastMessage:
+      local: last_message_id
+      foreign: id
+      onDelete: CASCADE
+      class: Message
+Blacklist:
+  tableName: jo_blacklist
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    user_id:
+      type: integer
+    black_id:
+      type: integer
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Black:
+      local: black_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+BillingType:
+  tableName: jo_billing_type
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    title:
+      type: string
+      length: '250'
+    code:
+      type: string
+      length: '250'
+    summa:
+      type: integer
+      length: '4'
+    credit:
+      type: integer
+      length: '4'
+Billing:
+  tableName: jo_billing
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    title:
+      type: string
+      length: '250'
+    summa:
+      type: decimal
+      scale: 2
+    balance:
+      type: decimal
+      scale: 2
+    credit:
+      type: integer
+      length: '4'
+    user_id:
+      type: integer
+    username:
+      type: string
+      length: '50'
+    type_id:
+      type: integer
+      length: '4'
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    BillingType:
+      local: type_id
+      foreign: id
+      onDelete: CASCADE
+      class: BillingType
+Interest:
+  tableName: jo_interest
+  actAs:
+    Timestampable: {  }
+  columns:
+    id:
+      type: integer
+      primary: true
+      autoincrement: true
+      length: '4'
+    user_id:
+      type: integer
+    interest_id:
+      type: integer
+    is_read_user:
+      type: boolean
+      default: false
+    is_read_interest:
+      type: boolean
+      default: false
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Interest:
+      local: interest_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser

@@ -1,0 +1,72 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/11-App
+
+# default values
+all:
+  demo_account: false
+  paypal_email: jb1008@wanadoo.fr
+  use_comet: false
+  http_host: 'our-feeling.com'
+  sf_captchagd_force_new_captcha: true
+  mgI18nPlugin:
+    connection: doctrine
+    cultures_available:
+      ru: Russian
+      en: English
+      fr: Franch
+#      de: German
+#      is: Spanish
+  tool_bar_page: "[['Source','Font', 'FontSize','Styles', 'TextColor','JustifyLeft','JustifyCenter','JustifyBlock', 'Bold', 'Italic','PasteFromWord', 'PasteText', 'Table', 'Link', 'ImageButton','RemoveFormat','Smiley','Preview']]"
+  tool_bar_notify: "[['Source','Font', 'FontSize', 'TextColor','JustifyLeft','JustifyCenter','JustifyBlock', 'Bold', 'Italic','PasteFromWord', 'PasteText', 'Table', 'Link', 'ImageButton','RemoveFormat','Smiley','Preview']]"
+  tool_bar_message: "[['TextColor', 'Bold', 'Italic','PasteFromWord', 'PasteText','Smiley','Preview']]"
+  tool_bar_faq: "[['TextColor', 'Bold', 'Italic','PasteFromWord', 'PasteText','Smiley','Preview']]"
+
+
+  menu:
+    status_anket: 'true'
+    page:         'true'
+    notice:       'true'
+    group_gift:   'true'
+    gift:         'true'
+    help:         'true'
+    anket:        'true'
+    services:     'true'
+    billing:      'true'
+    billing_type: 'true'
+    task:         'true'
+    fletter:      'true'
+    guarduser:    'true'
+    partner:      'true'
+    theme:        'true'
+    photo:        'true'
+    video:        'true'
+    message:      'true'
+    bonus:        'true'
+    ban:          'true'
+    payment:      'true'
+    giftbox:      'true'
+    claim:        'true'
+    apartment:    'true'
+    contact:      'true'
+    task:         'true'
+    password2:    'true'
+    chat:         'true'
+
+#  sfImageTransformPlugin:
+#    default_adapter: GD
+#    default_image:
+#      mime_type: image/png
+#      filename: Untitled.png
+#      width: 100
+#      height: 100
+#      color: '#FFFFFF'
+#    font_dir: /usr/share/fonts/truetype/msttcorefonts
+#    mime_type:
+#      auto_detect: false
+#      library: gd_mime_type #  gd_mime_type (GD), Fileinfo (PECL), MIME_Type (PEAR)
+
+# Форматы видео
+  video:
+    format: ['video/x-flv','application/octet-stream']
+
+<?php include(sfConfig::get('sf_config_dir').'/inc/settings.yml') ?>

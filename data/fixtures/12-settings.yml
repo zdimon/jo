@@ -1,0 +1,288 @@
+Settings:
+  Settings_1:
+    var_name:  'giftbox_cost_transport'
+    var_value:  '10'
+    var_description: 'Стоимость доставки подарков'
+    pub:        false
+    
+  Settings_2:
+    var_name:  'demo_account'
+    var_value:  'true'
+    var_description: 'Demo order of the payment'    
+    pub:        true
+
+    
+  Settings_3:
+    var_name:  'personal_mail'
+    var_value:  'true'
+    var_description: 'Использование персональной переписки (группировка по абонентам)'  
+    pub:        false    
+    
+
+  Settings_4:
+    var_name:  'one_language'
+    var_value:  'false'
+    var_description: 'Использование одного языка'  
+    pub:        false     
+    
+    
+  Settings_5:
+    var_name:  'max_photo'
+    var_value:  '10'
+    var_description: 'Ограничение фото'  
+    pub:        false    
+    
+  Settings_6:
+    var_name:  'max_video'
+    var_value:  '10'
+    var_description: 'Ограничение видео'  
+    pub:        false  
+
+
+  Settings_7:
+    var_name:  'big_photo_width'
+    var_value:  '333'
+    var_description: 'Width of the big photo'  
+    pub:        true
+
+
+  Settings_8:
+    var_name:  'big_photo_height'
+    var_value:  '488'
+    var_description: 'Height  of the big photo'  
+    pub:        true
+    
+    
+  Settings_9:
+    var_name:  'middle_photo_width'
+    var_value:  '150'
+    var_description: 'Width  of the middle photo'  
+    pub:        true
+
+
+  Settings_10:
+    var_name:  'middle_photo_height'
+    var_value:  '220'
+    var_description: 'Height of the middle photo'  
+    pub:        true    
+    
+    
+  Settings_11:
+    var_name:  'reg_search'
+    var_value:  'false'
+    var_description: 'Поиск только для зарегистированных'  
+    pub:        false
+
+
+  Settings_12:
+    var_name:  'reg_profile'
+    var_value:  'true'
+    var_description: 'Просмотр профайла только для зарегистированных'  
+    pub:        false
+
+  Settings_13:
+    var_name:  'reg_real_gift'
+    var_value:  'false'
+    var_description: 'Реальные подарки только для зарегистированных'  
+    pub:        false
+    
+  Settings_14:
+    var_name:  'reg_virtual_gift'
+    var_value:  'false'
+    var_description: 'Виртуальные подарки только для зарегистированных'  
+    pub:        false    
+    
+  Settings_15:
+    var_name:  'use_smile'
+    var_value:  'true'
+    var_description: 'Функционал подмигивания'  
+    pub:        false     
+
+    
+  Settings_16:
+    var_name:  'use_fav'
+    var_value:  'true'
+    var_description: 'Функционал фаворитов'  
+    pub:        false 
+    
+    
+  Settings_17:
+    var_name:  'use_message'
+    var_value:  'true'
+    var_description: 'Функционал сообщений'  
+    pub:        false    
+    
+    
+  Settings_18:
+    var_name:  'use_black'
+    var_value:  'true'
+    var_description: 'Функционал черного списка'  
+    pub:        false  
+
+  Settings_19:
+    var_name:  'use_claim'
+    var_value:  'true'
+    var_description: 'Функционал жалоб мужчин'  
+    pub:        false    
+    
+  Settings_20:
+    var_name:  'use_interest'
+    var_value:  'true'
+    var_description: 'Функционал кто мной интересовался'  
+    pub:        false    
+    
+  Settings_21:
+    var_name:  'use_real_gift'
+    var_value:  'true'
+    var_description: 'Функционал реальных подарков'  
+    pub:        false    
+    
+  Settings_22:
+    var_name:  'use_virtual_gift'
+    var_value:  'true'
+    var_description: 'Функционал виртуальных подарков'  
+    pub:        false    
+    
+   
+  Settings_23:
+    var_name:  'use_contact'
+    var_value:  'true'
+    var_description: 'Функционал запроса контактной информации'  
+    pub:        false
+    
+  
+  Settings_24:
+    var_name:  'use_chat'
+    var_value:  'true'
+    var_description: 'Функционал чата'  
+    pub:        false 
+
+
+  Settings_25:
+    var_name:  'use_skan'
+    var_value:  'true'
+    var_description: 'Функционал добавления скан копий паспортов девченок'  
+    pub:        false   
+
+  Settings_26:
+    var_name:  'perpage_search'
+    var_value:  '9'
+    var_description: 'Количество элементов в поиске и галереи'  
+    pub:        false
+    
+  Settings_27:
+    var_name:  'not_same_gender'
+    var_value:  'true'
+    var_description: 'Фильтр результатов противоположного пола'  
+    pub:        false    
+
+  Settings_28:
+    var_name:  'giftbox_payment'
+    var_value:  'true'
+    var_description: 'Оплата реальных подарков через платежную систему'  
+    pub:        false   
+
+  Settings_29:
+    var_name:  'giftbox_additional_type'
+    var_value:  'true'
+    var_description: 'Добавление типа подарка'  
+    pub:        false    
+    
+  Settings_30:
+    var_name:  'giftbox_all'
+    var_value:  'false'
+    var_description: 'вывод всех подарков в категориях'  
+    pub:        false    
+    
+ 
+  Settings_31:
+    var_name:  'giftbox_category_all'
+    var_value:  'false'
+    var_description: 'вывод категорий в просмотре категорий'  
+    pub:        false  
+    
+  Settings_32:
+    var_name:  'cost_virtual_gift'
+    var_value:  'false'
+    var_description: 'Стоимость виртуального подарка'  
+    pub:        false   
+
+  Settings_33:
+    var_name:  'site_name'
+    var_value:  'datebride.com'
+    var_description: 'Имя сайта (домен)'  
+    pub:        false 
+
+  Settings_34:
+    var_name:  'sf_guard_plugin_success_signin_url'
+    var_value:  'profile/show'
+    var_description: 'Куда перебрасывать после авторизации'  
+    pub:        false    
+
+  Settings_35:
+    var_name:  'email_admin'
+    var_value:  'zdimon77@gmail.com'
+    var_description: 'Email of the administrator'  
+    pub:        true
+    
+  Settings_36:
+    var_name:  'email_reply'
+    var_value:  'noreply@datebride.com'
+    var_description: 'E-mail of the notification robot'  
+    pub:        true
+   
+
+  Settings_37:
+    var_name:  'limit_fletter'
+    var_value:  '3'
+    var_description: 'Лимит первых писем в день'  
+    pub:        false  
+
+  Settings_38:
+    var_name:  'chat_version'
+    var_value:  'symfony'
+    var_description: 'Версия чата'  
+    pub:        false    
+    
+  Settings_39:
+    var_name:  'paypal_email'
+    var_value:  'suppor_1303286772_biz@mirbu.com'
+    var_description: 'Email of the paypal's sailor'  
+    pub:        true      
+    
+  Settings_40:
+    var_name:  'show_translation'
+    var_value:  'true'
+    var_description: 'Отображение панели перевода'  
+    pub:        false     
+    
+  Settings_41:
+    var_name:  'procent_transport_comission'
+    var_value:  '50'
+    var_description: '% комиссии от доставки'  
+    pub:        false 
+    
+  Settings_42:
+    var_name:  'auto_login'
+    var_value:  'true'
+    var_description: 'автологин пользователя по ссылке'  
+    pub:        false 
+    
+  Settings_43:
+    var_name:  'use_abonement'
+    var_value:  'true'
+    var_description: 'Использование абонемента'  
+    pub:        false    
+
+  Settings_44:
+    var_name:  'small_photo_width'
+    var_value:  '70'
+    var_description: 'Width of the small photo'  
+    pub:        true
+
+  Settings_45:
+    var_name:  'small_photo_eight'
+    var_value:  '70'
+    var_description: 'Height of the small photo'  
+    pub:        true 
+    

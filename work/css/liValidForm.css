@@ -1,0 +1,18 @@
+.mand{color:#f00 !important;}
+.form_style .indicator{border-color:#EE5F5B;color:#B94A48;}
+.form_style .indicator:focus{border-color:#E9322D;box-shadow:0 0 6px #F8B9B7;}
+.form_style{display:block;padding:10px 0 15px 0;}
+.form_style input, .form_style textarea{vertical-align:top;}
+.form_style textarea{vertical-align:top}
+.row{padding:0 0 5px 0;position:relative}
+.form_style label{width:150px;padding:2px 5px 0 0;text-align:right;display:inline-block;}
+.form_style .r{display:inline-block;vertical-align:top;width:6px;}
+.form_style .row table{display:inline-block;vertical-align:top;//display:inline;//zoom:1}
+.form_style .row table td{vertical-align:top;padding:6px 10px 0 0}
+.form_style .row table td .update_captcha{text-align:left;margin:0 0 0 5px}
+.form_style #image{margin:0 0 0 5px !important;}
+.form_style ul.error_list li{list-style:none;color:red;font-weight:bold;background:#FCECAA;-moz-border-radius:5px;-webkit-border-radius:5px;-khtml-border-radius:5px;border-radius:5px;padding:2px;}
+.form_style ul.error_list{display:inline-block;margin-left:10px;}
+.form_style .t_radio{width:auto !important;margin:0 0 0 3px;}
+.top{-moz-display:inline-box;display:inline-block !important;//display:inline;//zoom:1;vertical-align:top;}
+.psevdo_but{background:#fff}

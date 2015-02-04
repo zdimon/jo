@@ -1,0 +1,122 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/05-Factories
+
+prod:
+  logger:
+    class:   sfNoLogger
+    param:
+      level:   err
+      loggers: ~
+
+test:
+  storage:
+    class: sfSessionTestStorage
+    param:
+      session_path: %SF_TEST_CACHE_DIR%/sessions
+
+  response:
+    class: sfWebResponse
+    param:
+      send_http_headers: false
+
+  mailer:
+    class: sfMailer
+    param:
+      logging:           %SF_LOGGING_ENABLED%
+      charset:           %SF_CHARSET%
+      delivery_strategy: realtime
+      transport:
+        class: Swift_SmtpTransport
+        param:
+          host:       localhost
+          port:       25
+          encryption: ~
+          username:   ~
+          password:   ~
+
+dev:
+  mailer:
+    class: sfMailer
+    param:
+      logging:           %SF_LOGGING_ENABLED%
+      charset:           %SF_CHARSET%
+      delivery_strategy: realtime
+      transport:
+        class: Swift_MailTransport
+
+
+
+
+
+all:
+  storage:
+    class: sfSessionStorage
+    param:
+      session_name: our_symfony  
+  routing:
+    class: sfPatternRouting
+    param:
+      generate_shortest_url:            true
+      extra_parameters_as_query_string: true
+  i18n:
+    class: mgI18N
+    param:
+      source:               mgMySQL
+      database:             doctrine  # or propel or any names defined in the databases.yml files
+      debug:                false
+      learning_mode:        true        # if 'on' all translations are automatically added to the database
+      global_application:  'frontend' # Optional ; use the same translations catalogues for all applications
+      untranslated_prefix:  "[T]"
+      untranslated_suffix:  "[/T]"
+      cache:
+        class: sfFileCache
+        param:
+          automatic_cleaning_factor: 0
+          cache_dir:                 %SF_I18N_CACHE_DIR%
+          lifetime:                  86400
+          prefix:                    %SF_APP_DIR%
+  mailer:
+    class: sfMailer
+    param:
+      logging:           %SF_LOGGING_ENABLED%
+      charset:           %SF_CHARSET%
+      delivery_strategy: realtime
+      transport:
+        class: Swift_MailTransport
+
+  view_cache:
+    class: sfTaggingCache
+    param:
+      data:
+        class: sfFileTaggingCache
+        param:
+          cache_dir:         %SF_CACHE_DIR%/tag
+      tags: ~
+      logger:
+        class: sfFileCacheTagLogger # to disable logger, set class to "sfNoCacheTagLogger"
+        param:
+
+          file:         %SF_LOG_DIR%/cache_%SF_ENVIRONMENT%.log
+
+          file_mode:    0640              # -rw-r----- (default: 0640)
+          dir_mode:     0750              # drwxr-x--- (default: 0750)
+          time_format:  "%Y-%b-%d %T%z"   # e.g. 2010-Sep-01 15:20:58+0300 (default: "%Y-%b-%d %T%z")
+
+          format:       %char%        # %char%              - Operation char (see char explanation in sfCacheTagLogger::explainChar())
+                                      # %char_explanation%  - Operation explanation string
+                                      # %time%              - Time, when data/tag was accessed
+                                      # %key%               - Cache name or tag name with its version
+                                      # %microtime%         - Micro time timestamp when data/tag was accessed
+                                      # %EOL%               - Whether to append \n in the end of line
+                                      # (e.g. "%microtime% %char% (%char_explanation%) %key%%EOL%")
+
+  view_cache_manager:
+    class: sfViewCacheTagManager
+    param:
+      cache_key_use_vary_headers: true
+      cache_key_use_host_name:    true
+      
+  user:
+    class: myUser
+    param:
+      timeout:         18000      

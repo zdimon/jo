@@ -1,0 +1,59 @@
+# # Populate this file with data to be loaded by your ORM's *:data-load task.
+# # You can create multiple files in this directory (i.e. 010_users.yml,
+# # 020_articles.yml, etc) which will be loaded in alphabetical order.
+# # 
+# # See documentation for your ORM's *:data-load task for more information.
+# 
+Faq:
+  Faq_1:
+    pub: true
+  Faq_2:
+    pub: true
+  Faq_3:
+    pub: true
+  Faq_4:
+    pub: true
+  Faq_5:
+    pub: true
+  Faq_6:
+    pub: true
+  Faq_7:
+    pub: true
+
+
+FaqTranslation:
+  Faq_1_en:
+    lang: 'en'
+    title: 'faq 1'
+    description:  'faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 '
+    Faq: Faq_1
+  Faq_2_en:
+    lang: 'en'
+    title: 'faq 2'
+    description:  'faq 2 faq 2 faq 2 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 '
+    Faq: Faq_2
+  Faq_3_en:
+    lang: 'en'
+    title: 'faq 3'
+    description:  'faq 3 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 '
+    Faq: Faq_3
+  Faq_4_en:
+    lang: 'en'
+    title: 'faq 4'
+    description:  'faq 441 faq 1 faq44  44 41 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 '
+    Faq: Faq_4
+  Faq_5_en:
+    lang: 'en'
+    title: 'faq 5'
+    description:  'faq 5 faq 1 faq 1 faq 1 faq 5 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 '
+    Faq: Faq_5
+  Faq_6_en:
+    lang: 'en'
+    title: 'faq 6'
+    description:  'faq 6 faq 6 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 '
+    Faq: Faq_6
+  Faq_7_en:
+    lang: 'en'
+    title: 'faq 7'
+    description:  'faq 7 faq 7 faq 7 faq 7 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 faq 1 '
+    Faq: Faq_7

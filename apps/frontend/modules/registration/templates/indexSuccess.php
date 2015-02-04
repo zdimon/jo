@@ -1,0 +1,1 @@
+<?php include_partial('global/common/forms/popup_register_form', array('form'=>$form)) ?>

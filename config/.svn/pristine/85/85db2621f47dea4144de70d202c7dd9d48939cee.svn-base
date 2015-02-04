@@ -1,0 +1,16 @@
+# You can find more information about this file on the symfony website:
+# http://www.symfony-project.org/reference/1_4/en/07-Databases
+
+all:
+  doctrine:
+    class: sfDoctrineDatabase
+    param:
+#      dsn:      mysql:host=localhost;dbname=levandos
+#      username: root
+#      password: 
+
+      phptype: pgsql
+      username: postgres
+      password: 1q2w3e
+      dsn: 'pgsql:host=localhost;dbname=ourfeeling14'
+      datasource: prope

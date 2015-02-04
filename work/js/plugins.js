@@ -1,0 +1,4 @@
+$(document).ready(function(){$(".menu_left").LiVMenu({menu_w:'100%'});$('.validat').liValidForm()
+$('#mycarousel').jcarousel({wrap:'circular',scroll:2,visible:6,auto:3,animation:1000,buttonNextHTML:null,buttonPrevHTML:null,initCallback:function(jc,state){if(state=='init'){jc.startAutoOrig=jc.startAuto;jc.startAuto=function(){if(!jc.paused){jc.startAutoOrig();}}
+jc.pause=function(){jc.paused=true;jc.stopAuto();};jc.play=function(){jc.paused=false;jc.startAuto();};$('li.jcarousel-item').mouseover(function(){jc.pause();$('.joinMeBule',this).show();});$('li.jcarousel-item').mouseout(function(){jc.play();$('.joinMeBule',this).hide()});}
+jc.play();}});});

@@ -1,0 +1,59 @@
+# # Populate this file with data to be loaded by your ORM's *:data-load task.
+# # You can create multiple files in this directory (i.e. 010_users.yml,
+# # 020_articles.yml, etc) which will be loaded in alphabetical order.
+# # 
+# # See documentation for your ORM's *:data-load task for more information.
+# 
+News:
+  News_1:
+    pub: true
+  News_2:
+    pub: true
+  News_3:
+    pub: true
+  News_4:
+    pub: true
+  News_5:
+    pub: true
+  News_6:
+    pub: true
+  News_7:
+    pub: true
+
+
+NewsTranslation:
+  News_1_en:
+    lang: 'en'
+    title: 'News 1'
+    description:  'News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 '
+    News: News_1
+  News_2_en:
+    lang: 'en'
+    title: 'News 2'
+    description:  'News 2 News 2 News 2 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 '
+    News: News_2
+  News_3_en:
+    lang: 'en'
+    title: 'News 3'
+    description:  'News 3 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 '
+    News: News_3
+  News_4_en:
+    lang: 'en'
+    title: 'News 4'
+    description:  'News 441 News 1 News44  44 41 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 '
+    News: News_4
+  News_5_en:
+    lang: 'en'
+    title: 'News 5'
+    description:  'News 5 News 1 News 1 News 1 News 5 News 1 News 1 News 1 News 1 News 1 News 1 '
+    News: News_5
+  News_6_en:
+    lang: 'en'
+    title: 'News 6'
+    description:  'News 6 News 6 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 News 1 '
+    News: News_6
+  News_7_en:
+    lang: 'en'
+    title: 'News 7'
+    description:  'News 7 News 7 News 7 News 7 News 1 News 1 News 1 News 1 News 1 News 1 News 1 '
+    News: News_7

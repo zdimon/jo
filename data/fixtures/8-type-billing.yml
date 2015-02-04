@@ -1,0 +1,20 @@
+BillingType:
+  BillingType_1:
+    title:       Membership 12 month
+    summa:       600
+    credit:      800
+    
+  BillingType_2:
+    title:       Membership 6 month
+    summa:       450
+    credit:      500    
+    
+  BillingType_3:
+    title:       Membership 3 month
+    summa:       260
+    credit:      300
+
+  BillingType_4:
+    title:       Membership 1 month
+    summa:       150
+    credit:      120    

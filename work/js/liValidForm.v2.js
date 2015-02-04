@@ -1,0 +1,32 @@
+jQuery.fn.liValidForm=function(options){var o=jQuery.extend({valid:'.valid',r:'.r',row:'.row',noValid:'.noValid'},options);return this.each(function(){var form=$(this);var valid_form=$(o.valid,form);var but=$('[type=submit]',form);var mand_el=valid_form.length;var psevdo_but=$('<div>').css({width:but.actual('outerWidth'),height:but.actual('outerHeight')+5,left:but.position().left,top:but.position().top,position:'absolute',zIndex:'100',marginLeft:but.css('marginLeft'),marginTop:but.css('marginTop'),opacity:'0.1'}).addClass('psevdo_but')
+$(o.noValid).each(function(){$(this).parents(o.row).find(o.r).html('&nbsp;').removeClass('mand');})
+valid_form.not(o.noValid).blur(function(){valider($(this),$(this).val())})
+valid_form.not(o.noValid).keyup(function(){valider($(this),$(this).val())})
+valid_form.not(o.noValid).change(function(){valider($(this),$(this).val())})
+psevdo_but.click(function(){valid_form.not(o.noValid).each(function(){valider($(this),$(this).val())})})
+valid_form.not(o.noValid).each(function(){$(this).parents(o.row).find('.r').html('*').addClass('mand');var el_form=$(this);var el_val=$.trim(el_form.val());var el_dataVal=$.trim(el_form.data('val'));if(el_val!=''&&el_val!=el_dataVal){if(el_form.is(':not(".email")')&&el_form.is(':not(".url")')&&el_form.is(':not(".digits")')&&el_form.is(':not("[name=hislo]")')&&el_form.is(':not("[type=radio]")')&&el_form.is(':not("[type=checkbox]")')){remove_w(el_form);}else{if(el_form.is('.email')){if(ValidEmail(el_val)){remove_w(el_form);}else{add_w(el_form);}}
+if(el_form.is('.url')){if(ValidUrl(el_val)){remove_w(el_form);}else{add_w(el_form);}}
+if(el_form.is('.date')){if(ValidDate(el_val)){remove_w(el_form);}else{add_w(el_form);}}
+if(el_form.is('[name=hislo]')){if(el_val.length==4){if(el_val=='9668'){remove_w(el_form);}else{add_w(el_form);}}else{add_w(el_form);}}
+if(el_form.is('[type=radio]')||el_form.is('[type=checkbox]')){if(ValidRadio(el_form)){$('[name='+el_form.attr('name')+']').each(function(){$(this).removeClass('wrong');})}else{$('[name='+el_form.attr('name')+']').each(function(){$(this).addClass('wrong');})}}}}else{el_form.addClass('wrong');}})
+function valider(z_el_form,z_el_val){var z_el_val=$.trim(z_el_form.val());if(z_el_val!=''&&z_el_val!=z_el_form.data('val')){if(z_el_form.is(':not(".email")')&&z_el_form.is(':not(".url")')&&z_el_form.is(':not(".digits")')&&z_el_form.is(':not("[name=hislo]")')&&z_el_form.is(':not("[type=radio]")')&&z_el_form.is(':not("[type=checkbox]")')){remove_w(z_el_form);remove_c(z_el_form);}else{if(z_el_form.is('.email')){if(ValidEmail(z_el_val)){remove_w(z_el_form);remove_c(z_el_form);}else{add_w(z_el_form);add_c(z_el_form);}}
+if(z_el_form.is('.url')){if(ValidUrl(z_el_val)){remove_w(z_el_form);remove_c(z_el_form);}else{add_w(z_el_form);add_c(z_el_form);}}
+if(z_el_form.is('.digits')){if(ValidDigits(z_el_val)){remove_w(z_el_form);remove_c(z_el_form);}else{add_w(z_el_form);add_c(z_el_form);}}
+if(z_el_form.is('[type=radio]')||z_el_form.is('[type=checkbox]')){if(ValidRadio(z_el_form)){$('[name='+z_el_form.attr('name')+']').each(function(){$(this).removeClass('wrong').removeClass('indicator');})}else{$('[name='+z_el_form.attr('name')+']').each(function(){$(this).addClass('wrong').addClass('indicator');})}}
+if(z_el_form.is('[name=hislo]')){if(z_el_val.length==4){if(z_el_val=='9668'){remove_w(z_el_form);remove_c(z_el_form);}else{add_w(z_el_form);add_c(z_el_form);}}else{add_w(z_el_form);add_c(z_el_form);}}}}else{add_w(z_el_form);add_c(z_el_form);}
+wrong()}
+wrong()
+function wrong(){var wrong_el=$('.wrong',form).length
+if(wrong_el>0){but.addClass('disabled').css({opacity:'0.5'});if(!$('.psevdo_but',form).length)
+but.after(psevdo_but)}else{but.removeClass('disabled').css({opacity:'1'});$('.psevdo_but',form).remove()}}
+function ValidEmail(emailAddress){var pattern=new RegExp(/^((([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+(\.([a-z]|\d|[!#\$%&'\*\+\-\/=\?\^_`{\|}~]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])+)*)|((\x22)((((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(([\x01-\x08\x0b\x0c\x0e-\x1f\x7f]|\x21|[\x23-\x5b]|[\x5d-\x7e]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(\\([\x01-\x09\x0b\x0c\x0d-\x7f]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF]))))*(((\x20|\x09)*(\x0d\x0a))?(\x20|\x09)+)?(\x22)))@((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?$/i);return pattern.test(emailAddress);}
+function ValidUrl(urlAddress){var pattern=new RegExp(/^(https?|ftp):\/\/(((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:)*@)?(((\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5])\.(\d|[1-9]\d|1\d\d|2[0-4]\d|25[0-5]))|((([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|\d|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.)+(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])*([a-z]|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])))\.?)(:\d*)?)(\/((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)+(\/(([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)*)*)?)?(\?((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|[\uE000-\uF8FF]|\/|\?)*)?(\#((([a-z]|\d|-|\.|_|~|[\u00A0-\uD7FF\uF900-\uFDCF\uFDF0-\uFFEF])|(%[\da-f]{2})|[!\$&'\(\)\*\+,;=]|:|@)|\/|\?)*)?$/i);return pattern.test(urlAddress);}
+function ValidDigits(dig){var pattern=new RegExp(/^\d+$/);return pattern.test(dig);}
+function ValidRadio(el_r){var el_name=el_r.attr('name')
+var check=el_r.closest("form").find('[name='+el_name+']').filter(':checked').length
+if(check>0){check_el=true}else{check_el=false}
+return check_el}
+function add_w(el_f){el_f.addClass('wrong');}
+function remove_w(el_f){el_f.removeClass('wrong');}
+function add_c(el_f){el_f.addClass('indicator');}
+function remove_c(el_f){el_f.removeClass('indicator');}});};

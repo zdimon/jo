@@ -1,0 +1,14 @@
+##############################################
+StatusFriend:
+  Statusbasket_1:
+    title:       'new'
+  Statusbasket_2:
+    title:       'request contact information'
+  Statusbasket_3:
+    title:       'waiting contact information'    
+  Statusbasket_4:
+    title:       'contact information have recived'    
+  Statusbasket_5:
+    title:       'decline'    
+  Statusbasket_6:
+    title:       'match'        

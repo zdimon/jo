@@ -1,0 +1,1039 @@
+# Письма о новых профайлах   ##########################
+Newuserletter:
+  tableName: jo_newuserletter
+  actAs:
+    I18n:
+      fields: [title, content]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:  string(250)
+    content:  string(25000)
+    to_gender:
+      type: enum
+      values: [man, women]
+      default: women
+    users_array:  string(250000)
+    is_send:
+      type: boolean
+      default: false
+    is_checked:
+      type: boolean
+      default: false
+    date_send:
+      type: date
+
+#  Новости ##########################
+Newsletter:
+  tableName: jo_newsletter
+  actAs:
+    I18n:
+      fields: [title, content]
+    Timestampable: ~
+  columns:
+    name: string(250)
+    title: string(250)
+    content: string(25000)
+    is_sent:
+      type: boolean
+      default: false
+
+#  Мыльница ##########################
+Mailer:
+  tableName: jo_mailer
+  columns:
+    letter_id: integer
+    user_id: integer
+    email: string(250)
+    is_sent:
+      type: boolean
+      default: false
+    date_sent: date
+    title:  string(250)
+    content:  string(25000)
+  relations:
+    User:
+      local: user_id
+      onDelete: CASCADE
+      foreign:  id
+      class: sfGuardUser
+    Newsletter:
+      local: letter_id
+      onDelete: CASCADE
+      foreign:  id
+      class: Newsletter
+  
+
+#  настройки сайта ##########################
+Settings:
+  tableName: jo_settings
+  columns:
+    var_name: string(250)
+    var_value: string(250)
+    var_description: string(250)
+    pub:
+      type: boolean
+      default: false
+
+#  Профайл пользователя ##########################
+Profile:
+  tableName: jo_profile
+  actAs:
+    Timestampable: ~
+    Cachetaggable: ~
+    I18n:
+      fields: [description, hobbies, ideal_match_description]
+  columns:
+    user_id: integer
+    first_name: string(255)
+    last_name: string(255)
+    middle_name: string(255)
+    real_name: string(255)
+    gender: 
+      type: enum
+      values: [m, w]
+      default: w
+    city:   string(250)
+    country: string(2)
+    zip: string(20)
+    adress: string(250)
+    phone:  string(250)
+    birthday: date
+    height: string(250)
+    body_type: string(250)
+    relationship: string(250)
+    rost: string(250)
+    ves:  string(250)
+    ethnicity: string(50)
+    religion:  string(100)
+    marital_status: string(50)
+    children: string(250)
+    where_children: string(250)
+    want_children: string(250)
+    im: string(250)
+    occupation: string(250)
+    language1: string(50)
+    language_skill1: string(250)
+    language2: string(50)
+    language_skill2: string(250)
+    language3: string(50)
+    language_skill3: string(250)
+    education: string(100)
+    income: string(250)
+    smoker: string(250)
+    drinker: string(250)
+    headline: string(250)
+    description: string(25000)
+    i_can_receive: string(250)
+    i_look_for_a: string(250)
+    looking_for_age_from: integer
+    looking_for_age_to:   integer
+    looking_for_a_height_from: string(250)
+    looking_for_a_height_to: string(250)
+    looking_for_a_body_type_from: string(250)
+    looking_for_a_body_type_to: string(250)
+    relationship: string(250)
+    ideal_match_description: string(2500)
+    notify_me_about_news:
+      type: boolean
+      default: true
+    mobile_phone: string(250)
+    photo: string(250)
+    hair_lenght: string(250)
+    hair_color: string(250)
+    eye_color: string(250)
+    hobbies: string(2500)
+    weight: integer
+    looking_for: string(5)
+    looking_for_role: string(50)
+    contact_lenses:
+      type: boolean
+      default: false
+    is_active:
+      type: boolean
+      default: false
+    is_new_message:
+      type: boolean
+      default: false
+    is_new_friend:
+      type: boolean
+      default: false	
+    is_new_request:
+      type: boolean
+      default: false
+    is_new_gift:
+      type: boolean
+      default: false
+    is_new_hotlist:
+      type: boolean
+      default: false	 
+    is_empty:
+      type: boolean
+      default: true
+    is_online:
+      type: boolean
+      default: false
+    with_photo:
+      type: boolean
+      default: false
+    with_video:
+      type: boolean
+      default: false
+    subtype:
+      type: enum
+      values: [none, top100, bikini]
+      default: none
+    most_active_user: integer
+    status_id: integer(4)
+    homepage: string(250)
+    phone2: string(250)
+    icq: string(250)
+    msn: string(250)
+    skype: string(250)
+    zodiac: integer(2)
+    partner_id: integer(4)
+    can_resive_gift:  # newsletter
+      type: boolean
+      default: false
+    skan: string(250)
+    rating: integer(4)
+    packet_id: integer
+    max_abonent:
+      type: integer
+      default: 0
+    cur_abonent:
+      type: integer
+      default: 0
+    sub_newsletter:
+      type: boolean
+      default: true
+    sub_fav:
+      type: boolean
+      default: true
+    sub_interest:
+      type: boolean
+      default: true
+    sub_message:
+      type: boolean
+      default: true
+    cert:
+      type: boolean
+      default: false
+    scamer:
+      type: boolean
+      default: false
+    is_camera:
+      type: boolean
+      default: false
+    is_chat:
+      type: boolean
+      default: false
+    send_as_new:
+      type: boolean
+      default: false
+    birthday_mark: integer(4)
+  relations:
+    sfGuardUser:
+      local: user_id
+      foreign: id
+      type: one
+      foreignType: one
+    Status:
+      local: status_id
+      onDelete: CASCADE
+      foreign:  id
+      class: ProfileType
+    Packet:
+      local: packet_id
+      onDelete: CASCADE
+      foreign:  id
+      class: ProfilePacket
+  indexes:
+    partner_id:
+      fields: [partner_id]
+
+# Статусы анкет   ##########################
+
+ProfileType:
+  tableName: jo_profile_type
+  actAs:
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:  string(250)
+    description:  string(2500)
+
+# Пакеты   ##########################
+
+ProfilePacket:
+  tableName: jo_profile_packet
+  actAs:
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:  string(250)
+    description:  string(2500)
+
+
+
+
+#  Фото ##########################
+Photo:
+  tableName: jo_photo
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id: integer
+    username: string(50)
+    title:
+      type: string(50)
+    image:
+      type: string(250)
+    pub:
+      type: boolean
+      default: false
+    is_main:
+      type: boolean
+      default: false
+    is_private:
+      type: boolean
+      default: false 
+    size: integer(11)
+    partner_id: integer
+  relations:
+    User:
+      local: user_id
+      onDelete: CASCADE
+      foreign:  id
+      class: sfGuardUser
+    Partner:
+      local: partner_id
+      onDelete: CASCADE
+      foreign:  id
+      class: sfGuardUser
+
+
+#  Видео ##########################
+Video:
+  tableName: jo_video
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id: integer
+    username: string(50)
+    title:
+      type: string(50)
+    file_path:
+      type: string(250)
+    pub:
+      type: boolean
+      default: false
+    size: integer(11)
+    description: string(250)
+    format: string(50)
+    is_convert:
+      type: boolean
+      default: false
+    partner_id: integer
+  relations:
+    User:
+      local: user_id
+      onDelete: CASCADE
+      foreign:  id
+      class: sfGuardUser
+    Partner:
+      local: partner_id
+      onDelete: CASCADE
+      foreign:  id
+      class: sfGuardUser      
+
+#  Сообщения ##########################
+Message:
+  tableName: jo_message
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    from_id: integer
+    from_username: string(50)
+    to_id: integer
+    to_username: string(50)
+    from_partner_id: integer
+    to_partner_id: integer
+    title: string(100)
+    content: string(500000)
+    translate: string(2500)
+    image: string(250)
+    reply_id: integer(4)
+    type_message:
+      type: enum
+      values: [smile, message, first]
+      default: message
+    pub:
+      type: boolean
+      default: true
+    is_read:
+      type: boolean
+      default: false
+    is_reply:
+      type: boolean
+      default: false
+    del_from:
+      type: boolean
+      default: false
+    del_to:
+      type: boolean
+      default: false
+    popup:
+      type: boolean
+      default: false
+  relations:
+    FromUser:
+      local: from_id
+      onDelete: CASCADE
+      foreign:  id
+      class: sfGuardUser
+    ToUser:
+      local: to_id
+      onDelete: CASCADE
+      foreign:  id
+      class: sfGuardUser
+  indexes:
+    to_username:
+      fields: [to_username]
+    from_username:
+      fields: [from_username]
+    reply_id:
+      fields: [reply_id]
+    type_message:
+      fields: [type_message]
+
+#  друзья ##########################
+Friend:
+  tableName: jo_friend
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id: integer
+    friend_id: integer
+    status_id: integer(4)
+    del_user:
+      type: boolean
+      default: false
+    del_friend:
+      type: boolean
+      default: false 
+    is_read_user:
+      type: boolean
+      default: false
+    is_read_friend:
+      type: boolean
+      default: false
+    contact: string(10000) 
+    from_partner_id: integer
+    to_partner_id: integer
+    request_video:
+      type: boolean
+      default: false
+    accept_video:
+      type: boolean
+      default: false
+    read_accept:
+      type: boolean
+      default: false   
+    popup_add:
+      type: boolean
+      default: false
+    popup_match:
+      type: boolean
+      default: true
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Friend:
+      local: friend_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Status:
+      local: status_id
+      foreign: id
+      onDelete: CASCADE
+      class: StatusFriend      
+  indexes:
+    is_read_user:
+      fields: [is_read_user]
+    is_read_friend:
+      fields: [is_read_friend]
+
+#  статусы друзей ##########################      
+StatusFriend:
+  tableName: jo_status_friend
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title: string(100)
+
+
+
+      
+#  Страницы ##########################
+Page:
+  tableName: jo_page
+  actAs:
+    I18n:
+      fields: [icontent, ititle]  
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true  
+    alias: 
+      type: string(250)  
+    title: 
+      type: string(250) 
+    icontent: 
+      type: string(100000) 
+    ititle: 
+      type: string(250)
+    undel:
+      type: boolean
+      default: false
+
+#  Отзывы  ##########################
+Testimonials:
+  tableName: jo_testimonials
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    body:  string(2500)
+    image:  string(250)
+    name:  string(250)
+    pub:
+      type: boolean
+      default: false
+
+#  Контакты  ##########################
+Contact:
+  tableName: jo_contact
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    body:  string(2500)
+    image:  string(250)
+    name:  string(250)
+    pub:
+      type: boolean
+      default: false
+
+#  Услуги ##########################
+Service:
+  tableName: jo_service
+  actAs:
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:
+      type: string(250)
+    description:   string(2500)
+    cost:
+      type: decimal
+      scale: 2
+    comission:
+      type: decimal
+      scale: 2
+    pub:
+      type: boolean
+      default: true
+    show_man:
+      type: boolean
+      default: false
+    show_partner:
+      type: boolean
+      default: false 
+  
+#  Уведомления ##########################
+Notify:
+  tableName: jo_notify
+  actAs:
+    I18n:
+      fields: [icontent, ititle, file]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:
+      type: string(250)
+    icontent:
+      type: string(100000)
+    ititle:
+      type: string(250)
+    file:
+      type: string(250)
+
+#  Новости   ##########################
+News:
+  tableName: jo_news
+  actAs:
+    Timestampable:
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:  string(250)
+    description:   string(2500)
+    image:  string(250)
+    pub:
+      type: boolean
+      default: false
+
+#  Faq   ##########################
+Faq:
+  tableName: jo_faq
+  actAs:
+    Timestampable:
+    I18n:
+      fields: [title, description]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:  string(250)
+    description:   string(2500)
+    pub:
+      type: boolean
+      default: false
+
+#  Платежи ##########################
+Payment:
+  tableName: jo_payment
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    service_id: integer(4)
+    user_id:  integer
+    woman_id:  integer
+    username:  string(50)
+    partner_id: integer
+    room_id: integer
+    summa:
+      type: decimal
+      scale: 2
+    balanse:
+      type: decimal
+      scale: 2
+    comission:
+      type: decimal
+      scale: 2
+    title:
+      type: string(250)
+    description:   string(2500)
+    cost:
+      type: decimal
+      scale: 2
+    is_closed:
+      type: boolean
+      default: true
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Partner:
+      local: partner_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Woman:
+      local: woman_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Service:
+      local: service_id
+      foreign: id
+      onDelete: CASCADE
+      class: Service    
+
+#  Хотлист  ##########################
+Hotlist:
+  tableName: jo_hotlist
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    from_id:  integer
+    to_id:  integer
+    last_message_id: integer(4)
+    is_new_message:
+      type: boolean
+      default: false
+    is_opened:
+      type: boolean
+      default: false
+  relations:
+    FromUser:
+      local: from_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    ToUser:
+      local: to_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    LastMessage:
+      local: last_message_id
+      foreign: id
+      onDelete: CASCADE
+      class: Message
+
+#  Черный список  ##########################
+Blacklist:
+  tableName: jo_blacklist
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:  integer
+    black_id:  integer
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Black:
+      local: black_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+
+# Типы пополнений   ##########################
+
+BillingType:
+  tableName: jo_billing_type
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:  string(250)
+    code:  string(250)
+    summa:  integer(4)
+    credit:  integer(4)
+
+#  Билинг  ##########################
+Billing:
+  tableName: jo_billing
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    title:
+      type: string(250)
+    summa:
+      type: decimal
+      scale: 2
+    balance:
+      type: decimal
+      scale: 2
+    credit: integer(4)
+    user_id:  integer
+    username:  string(50)
+    type_id: integer(4)
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    BillingType:
+      local: type_id
+      foreign: id
+      onDelete: CASCADE
+      class: BillingType
+
+#  Просмотр профайла  ##########################
+Interest:
+  tableName: jo_interest
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:  integer
+    interest_id:  integer
+    is_read_user:
+      type: boolean
+      default: false
+    is_read_interest:
+      type: boolean
+      default: false
+    popup:
+      type: boolean
+      default: false
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Interest:
+      local: interest_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+
+#  Просмотр профайла  ##########################
+Viewed:
+  tableName: jo_viewed
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    user_id:  integer
+    interest_id:  integer
+    is_read_user:
+      type: boolean
+      default: false
+    is_read_interest:
+      type: boolean
+      default: false
+    popup:
+      type: boolean
+      default: false
+  relations:
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Interest:
+      local: interest_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+
+#########Чат###############
+#  Каналы  ##########################
+Chat2Chanels:
+  tableName: jo_chat2_chanels
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    girl_src:  string(250)
+    user_src:  string(250)
+    user_id: integer
+    last_active: integer(4)
+    host:  string(250)
+
+
+#  Комнаты  ##########################
+Chat2Room:
+  tableName: jo_chat2_room
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    time_start:  integer
+    time_end:  integer
+    date_start:  timestamp
+    date_end:  timestamp
+    date_end:  timestamp
+    minute:  integer
+    with_video:  
+      type: boolean
+      default: false
+    with_man_video:  
+      type: boolean
+      default: false
+    status: 
+      type: enum
+      values: [new, wait, active, rejected, closed]
+      default: new
+    caller_id: integer
+    answer_id: integer
+    alert_id: integer
+    reject_id: integer
+    accept_video:  
+      type: boolean
+      default: false
+    accept_man_video:  
+      type: boolean
+      default: false
+    accept_call_by_woman:  
+      type: boolean
+      default: false      
+    chanel_id: integer
+  relations:
+    Caller:
+      local: caller_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Answer:
+      local: answer_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Alerter:
+      local: alert_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Rejecter:
+      local: reject_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+    Message:
+      local: id
+      foreign: room_id
+      class: Chat2Message     
+  indexes:
+    status:
+      fields: [status]
+    chanel_id:
+      fields: [chanel_id]
+
+
+#  Сообщения  ##########################
+Chat2Message:
+  tableName: jo_chat2_message
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    content:  string(2500)
+    room_id: integer(4)
+    user_id: integer
+    timer: integer(9)
+    is_read:
+      type: boolean
+      default: false
+  relations:
+    Room:
+      local: room_id
+      foreign: id
+      onDelete: CASCADE
+      class: Chat2Room
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+
+#  Комнаты-пользователи  ##########################
+Chat2RoomUsers:
+  tableName: jo_chat2_room_users
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    aproved:
+      type: boolean
+      default: false
+    room_id: integer(4)
+    user_id: integer
+    last_active: integer
+  relations:
+    Room:
+      local: room_id
+      foreign: id
+      onDelete: CASCADE
+      class: Chat2Room
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
+
+
+#  Видеолог  ##########################
+Chat2VideoLog:
+  tableName: jo_chat2_videolog
+  actAs: [Timestampable]
+  columns:
+    id:
+      type: integer(4)
+      primary: true
+      autoincrement: true
+    time_start:  integer
+    time_end:  integer
+    delta:  integer
+    room_id: integer(4)
+    user_id: integer
+  relations:
+    Room:
+      local: room_id
+      foreign: id
+      onDelete: CASCADE
+      class: Chat2Room
+    User:
+      local: user_id
+      foreign: id
+      onDelete: CASCADE
+      class: sfGuardUser
