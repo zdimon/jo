@@ -69,6 +69,26 @@ function googleTranslateElementInit() {
         <div class="png coll_h left_coll">
 
             <div class="coll_size">
+
+              <?php if (!$sf_user->isAuthenticated()): ?>
+              <?php $form = new sfGuardFormSignin() ?>
+              <form class="form_style f_quick_search textleft" action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
+                     <?php echo $form['_csrf_token']->render() ?>
+                     <div class="row"><label><?php echo __('Логин') ?> </label>
+                                     <input style="width: 95px" name="signin[username]"  class="login_pole" id="signin_username" type="text">
+                      </div>
+                     <div class="row"><label><?php echo __('Пароль') ?></label>
+                                      <input  size="5" name="signin[password]" style="width: 95px; height: 12px" class="pass_pole" id="signin_password" type="password">
+                      </div>
+                    
+                     <input value="<?php echo __('Enter') ?>" type="submit" class="but">
+                     <a class="block size11 white" href="<?php echo url_for('registration/index') ?>"><?= __('Registration')?></a>
+                     
+                </form>
+              <?php endif ?>
+            
+ 
+
                 <div style="text-align: center"><span class="but_2_wrap block "><span class="but_2 block"><span class="shift_top"><?= __('Quick Search')?></span></span></span></div>
                 <?php  include_partial('global/common/forms/short_search_form',array('form'=> new qsearchForm())) ?>
 

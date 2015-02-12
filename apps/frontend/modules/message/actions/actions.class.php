@@ -346,6 +346,7 @@ class messageActions extends commonActions
 
       public function executePersonal_show(sfWebRequest $request)
   {
+
       ////Определяем кого открываем
       $this->setHotlist($request);
 
@@ -429,22 +430,20 @@ class messageActions extends commonActions
   {
       $this->checkAuthorization();
       $this->insertArrays();
-    $this->autoLogin($request);
-    if(!$this->getUser()->isAuthenticated()) $this->redirect ('access/onlyregister');
-    /// Выбирает хотлист
+      $this->autoLogin($request);
+      if(!$this->getUser()->isAuthenticated()) $this->redirect ('access/onlyregister');
+      /// Выбирает хотлист
       $q = Doctrine::getTable('Hotlist')
       ->createQuery('a')
       ->where('a.from_id=?',array($this->getUser()->getGuardUser()->getId()))
-      ->orderBy('a.updated_at DESC')
-      ->execute();
-	  echo "<pre>";
-	  print_r($q);
-	  echo "</pre>";
-	  exit;
-	 $this->pager = new sfDoctrinePager('Message',20);
+      ->orderBy('a.updated_at DESC');
+	 
+	     $this->pager = new sfDoctrinePager('Hotlist',20);
        $this->pager->setQuery($q);
        $this->pager->setPage($request->getParameter('page', 1));
        $this->pager->init();
+
+
     
   }
 
