@@ -37,3 +37,6 @@
 
 
 <p><?= link_to(__('Activation link'),'http://'.$_SERVER['HTTP_HOST'].'/'.$profile->getsfGuardUser()->getCulture().'/registration/activate?code='.$profile->getsfGuardUser()->getSalt(),array('style'=>'color: red'));?></p>
+
+
+<b> Last login - <?=  $profile->getsfGuardUser()->getLastLogin() ?> </b>

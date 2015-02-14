@@ -31,6 +31,15 @@ class blacklistActions extends commonActions
         $this->getUser ()->setFlash ( 'error', __('You can not add youself!',array('%1%'=>$request->getParameter('username'))) );
         $this->redirect($this->getRef());
      }
+
+
+     if($i->getIsStaff() or $i->getIsSuperAdmin())
+     {
+        $this->getUser ()->setFlash ( 'error', __('You can not block this user!',array('%1%'=>$request->getParameter('username'))) );
+        $this->redirect($this->getRef());
+     }
+
+
     $this->forward404Unless($i);
     $f = Doctrine::getTable('Blacklist')
      ->createQuery('a')

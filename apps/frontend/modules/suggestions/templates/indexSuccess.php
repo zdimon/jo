@@ -1,3 +1,5 @@
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
 <h3><?= __('Suggestions') ?></h3>
 <?php if($page): ?>
 <p>
@@ -5,6 +7,22 @@
 </p>
 <?php endif; ?>
 
+
+<!-- ourfeling8 -->
+
+<ins class="adsbygoogle"
+
+     style="display:inline-block;width:300px;height:250px"
+
+     data-ad-client="ca-pub-6382580135773552"
+
+     data-ad-slot="8412723022"></ins>
+
+<script>
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+</script>
 
 <?php foreach ($pager->getResults() as $i): ?>
 
@@ -28,3 +46,22 @@
     </div>
 
 </form>
+
+
+
+
+<!-- ourfeling8 -->
+
+<ins class="adsbygoogle"
+
+     style="display:inline-block;width:300px;height:250px"
+
+     data-ad-client="ca-pub-6382580135773552"
+
+     data-ad-slot="8412723022"></ins>
+
+<script>
+
+(adsbygoogle = window.adsbygoogle || []).push({});
+
+</script>

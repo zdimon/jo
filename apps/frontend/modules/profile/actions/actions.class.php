@@ -398,6 +398,10 @@ class profileActions extends commonActions
      ->createQuery('a')
      ->where('a.username=?',array($request->getParameter('username')))
      ->fetchOne();
+
+
+    
+
      
     if(!$i)
     {
@@ -407,6 +411,15 @@ class profileActions extends commonActions
     else
     {
         $this->p = ProfileTable::getProfileById($i->getId());
+    }
+
+
+    if($i->getGender()==$this->getUser()->getGuardUser()->getGender() and !$this->getUser()->getGuardUser()->getIsSuperAdmin())
+    {
+
+        $this->getUser ()->setFlash ( 'error', __('You can not see this user!') );
+        $this->redirect($this->getRef());     
+
     }
 
       //// Определяем надпись

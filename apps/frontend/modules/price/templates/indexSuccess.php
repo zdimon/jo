@@ -22,8 +22,10 @@
     <!--<th><?= __('3 Days Trial') ?></th>-->
     <th style="background: #368E30"><?= __('Guest') ?></th>
     <th style="background: #69AA14"><?= __('Free Member') ?></th>
+    <!--
     <th  style="background: #968960"><?= __('Bronze Member') ?><br> <p class="pr">5 &euro;</p></th>
     <th  style="background: #7F7E7B"><?= __('Silver Member') ?><p class="pr">10 &euro;</p></th>
+    -->
     <th  style="background: #EAE73F"><?= __('Gold Member') ?><p class="pr">25 &euro;</p></th>
     <th  style="background: #D4DDDD"><?= __('Platinium Member') ?><p class="pr">30 &euro;</p></th>
 </tr>
@@ -33,8 +35,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td style="background: #368E30"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #69AA14"><?= image_tag('/images/valabl.png')?></td>
+    <!--
     <td  style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -45,8 +49,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td style="background: #368E30"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #69AA14"><?= image_tag('/images/valabl.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -56,8 +62,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td style="background: #69AA14"><?= image_tag('/images/valabl.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -67,8 +75,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td style="background: #69AA14"><?= image_tag('/images/valabl.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -78,8 +88,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td style="background: #69AA14"><?= image_tag('/images/valabl.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -89,8 +101,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td style="background: #69AA14"><?= image_tag('/images/valabl.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -100,8 +114,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -111,8 +127,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -122,8 +140,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -133,8 +153,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -144,8 +166,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -155,8 +179,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -166,8 +192,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -177,8 +205,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td style="background: #968960"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -189,8 +219,10 @@
     <!--<td><?= image_tag('/images/non.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td><?= image_tag('/images/non.png')?></td>
     <td style="background: #7F7E7B"><?= image_tag('/images/valabl.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -200,8 +232,10 @@
     <!--<td><?= image_tag('/images/non.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -211,8 +245,10 @@
     <!--<td><?= image_tag('/images/non.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -222,8 +258,10 @@
     <!--<td><?= image_tag('/images/valabl.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -233,8 +271,10 @@
     <!--<td><?= image_tag('/images/non.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    -->
     <td style="background: #EAE73F"><?= image_tag('/images/valabl.png')?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>
@@ -244,8 +284,10 @@
     <!--<td><?= image_tag('/images/non.png')?></td>-->
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    <!--
     <td><?= image_tag('/images/non.png')?></td>
     <td><?= image_tag('/images/non.png')?></td>
+    -->
     <td><?= __('Option') ?></td>
     <td style="background: #D4DDDD"><?= image_tag('/images/valabl.png')?></td>
 </tr>

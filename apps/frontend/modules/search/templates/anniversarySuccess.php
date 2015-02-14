@@ -34,3 +34,9 @@
 
 
 <?php endif ?>
+
+<?php if($banners): ?>
+<?= $banners->getIcontent()  ?>
+<?php endif ?>
+
+

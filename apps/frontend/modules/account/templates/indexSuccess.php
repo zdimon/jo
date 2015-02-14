@@ -36,7 +36,7 @@
 {
 ?>
              <option value="2_<?php echo $t->getSumma()*2-5 ?>">2 Month <?php echo $t->getSumma()*2-5 ?> EUR</option>
-             <?php } ?>
+             
              <?php     if (  $t->getId()==2){ ?>
              <option value="2_<?php echo $t->getSumma()*2-2 ?>">2 Month <?php echo $t->getSumma()*2-2 ?> EUR</option>
              <?php } ?>
@@ -49,7 +49,7 @@
 {
 ?>
              <option value="3_<?php echo $t->getSumma()*3-10 ?>">3 Month <?php echo $t->getSumma()*3-10 ?> EUR</option>
-             <?php } ?>
+            
              <?php     if (  $t->getId()==2){ ?>
              <option value="3_<?php echo $t->getSumma()*3-5 ?>">3 Month <?php echo $t->getSumma()*3-5 ?> EUR</option>
              <?php } ?>

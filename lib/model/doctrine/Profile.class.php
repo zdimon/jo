@@ -353,6 +353,15 @@ class Profile extends BaseProfile
 //             $this->_set('relationship', $value);
 //    }
 
+    public function setEmail($v)
+    {
+        $user = $this->getsfGuardUser();
+        if($v!=$user->getEmail())
+         {
+            $user->setEmail($v);
+            $user->save();
+         }
+    }
 
     public function getOnlineIcon()
     {

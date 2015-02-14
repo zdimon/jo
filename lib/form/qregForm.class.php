@@ -86,13 +86,13 @@ class qregForm extends PluginsfGuardUserForm
                                     // post validator
                 $this->validatorSchema->setPostValidator(
                        new sfValidatorAnd(array(
-        
+                                    new sfValidatorDoctrineUnique(array('model'  => 'sfGuardUser', 'column' => 'email'),    array(
+        'invalid'       => __('This email already exist, please, fill anotherone'),
+    ) ),
                            new sfValidatorDoctrineUnique(array('model'  => 'sfGuardUser', 'column' => 'username'),    array(
         'invalid'       => __('This username already exist, please, fill anotherone'),
-    ) ),
-                            new sfValidatorDoctrineUnique(array('model'  => 'sfGuardUser', 'column' => 'email'),    array(
-        'invalid'       => __('This email already exist, please, fill anotherone'),
     ) )
+
                             ))
                 );
                 

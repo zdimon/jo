@@ -288,16 +288,23 @@ class userActions extends autoUserActions
   {
      
     $p = Doctrine::getTable('Profile')->find($request->getParameter('id'));
-
+     
     if($p)
     {
+
       $p->setStatusId(1);
+
       $p->setIsActive(true);
+
       $user = $p->getsfGuardUser();
       $user->getIsActive(true);
-      $user->save();    
-      $this->sendNotify($user);      
+
+      $user->save();   
       $p->save();
+      $this->sendNotify($user);     
+      //die('st-'.$p->getStatusId());  
+      //
+      //die('st-'.$p->getStatusId());
     }
 
     $this->redirect('@profile');
@@ -478,15 +485,16 @@ class userActions extends autoUserActions
 
       $this->profile = $p;
       $this->form = new admUserForm($p);
+
       if ($request->isMethod ( 'post' ))
 		{
-
+          
 			$this->form->bind ( $request->getParameter ( 'profile' ));
 			if ($this->form->isValid ()) {
-
+                          
                           $pf = $this->form->save();
-			  $this->saveKeywords($request, $pf);			  
-
+			                    $this->saveKeywords($request, $pf);			  
+                      
                           $this->redirect ( 'user/show?id=',$pf->getUserId() );
 
 			}
@@ -747,8 +755,9 @@ class userActions extends autoUserActions
 
   public function sendNotify($user)
    {
+    
                    $m = NotifyTable::getNotify(11, $user->getCulture());
-             
+                  
                    if($m)
                    {
 
@@ -838,7 +847,7 @@ class userActions extends autoUserActions
                        );
 
                         $content =$m->parse2($arr,$user->getCulture());
-
+                        
                         mailTools::send($user->getEmail(), $m->Translation[$user->getCulture()]->ititle, $content);
 
                    }
@@ -866,9 +875,11 @@ class userActions extends autoUserActions
     $form->bind($request->getParameter($form->getName()), $request->getFiles($form->getName()));
     if ($form->isValid())
     {
+         
       $notice = $form->getObject()->isNew() ? 'The item was created successfully.' : 'The item was updated successfully.';
 
       $profile = $form->save();
+      $profile->setEmail($request->getParameter('profile')['email']);
 
       $this->dispatcher->notify(new sfEvent($this, 'admin.save_object', array('object' => $profile)));
 

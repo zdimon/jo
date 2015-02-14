@@ -176,3 +176,15 @@ input.but_style{width:200px;font:700 12px/1.2em Arial, Helvetica, sans-serif;bor
 .clr001{
 	clear:both;
 }
+
+table.table3
+{
+  background-color: #fff;
+  color: black;
+}
+
+table.table3 a
+{
+  color: red;
+}
+

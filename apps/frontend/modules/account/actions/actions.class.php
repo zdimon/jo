@@ -81,6 +81,7 @@ class accountActions extends commonActions
       // Выбираем типы пополнений
       $this->tbil = Doctrine::getTable('BillingType')
               ->createQuery('a')
+              ->where('a.id<>2 and a.id<>3')
               ->orderBy('a.summa DESC')
               ->execute();
 

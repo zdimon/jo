@@ -45,7 +45,9 @@
 <?php endif; ?>
 
 <?php endif ?>
-
+<?php if($banners): ?>
+<?= $banners->getIcontent()  ?>
+<?php endif ?>
 
 <!--
 <?php // $adm = ProfileTable::getAdmins(); ?>

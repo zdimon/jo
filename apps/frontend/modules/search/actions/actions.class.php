@@ -76,7 +76,10 @@ class searchActions extends commonActions
         $this->items = $st->fetchAll();
 
         $this->insertArrays();
-
+     $this->banners = Doctrine::getTable('Page')
+     ->createQuery('a')
+     ->where('a.alias=?' ,array('banners'))
+     ->fetchOne();
 
     }
 
@@ -102,6 +105,11 @@ public function executeAdv(sfWebRequest $request)
       //if(!$this->getUser()->isAuthenticated()) $this->redirect ('access/onlyregister');
       
       
+     $this->banners = Doctrine::getTable('Page')
+     ->createQuery('a')
+     ->where('a.alias=?' ,array('banners'))
+     ->fetchOne();
+
      if($this->getUser()->isAuthenticated())
      {
       if($this->getUser()->getGuardUser()->getProfile()->getGender()=='m')

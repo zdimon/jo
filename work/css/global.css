@@ -81,8 +81,8 @@ ul.alt li{list-style-type:none;border-top:1px dotted #ccc;border-bottom:1px dott
 .table1 tr.over td{}
 .table1 .td_first{}
 .table3{margin:0 0 0 -1px;}
-.table3 th{font-weight:bold;padding:1px 6px 1px;text-align:left;border:0;background:url(../pic/standard-cell.png) 0 0 no-repeat;}
-.table3 td{padding:1px 6px 1px;border:0;line-height:1.2em;background:url(../pic/standard-cell.png) 0 0 no-repeat;}
+.table3 th{font-weight:bold;padding:1px 6px 1px;text-align:left;border:0;}
+.table3 td{padding:1px 6px 1px;border:0;line-height:1.2em;}
 .table2{margin:0;margin-left:-1px}
 .table2 th{color:#999;font-weight:bold;padding:6px 6px 5px;text-align:left;border:0;font:italic 14px/1.2em Arial, Helvetica, sans-serif;}
 .table2 td{padding:2px 6px 2px;border:0;vertical-align:top;line-height:1.2em;background:url(../pic/standard-cell.gif) 0 1px #fff;border-bottom:2px solid #FFFFFF;}

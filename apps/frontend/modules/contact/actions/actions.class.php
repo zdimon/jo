@@ -46,7 +46,11 @@ class contactActions extends commonActions
                 $f = $this->form->save();
                 $m = $f->getBody();
                 $m = 'email: '.$request->getParameter('contact[email]').'<br />'.$m;
-
+                if($this->getUser()->isAuthenticated()) {
+                    
+                    $m = 'ID: '. $this->getUser()->getGuardUser()->getId().'; username: '.$this->getUser()->getGuardUser()->getId().'<br />'. $m;          
+            
+                }
                 
             mailTools::send('manager@our-feeling.com', 'Message from contact form' , $m.'<br/>Name: '.$f->getName());
 

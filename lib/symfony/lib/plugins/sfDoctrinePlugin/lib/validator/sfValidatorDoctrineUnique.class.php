@@ -68,7 +68,10 @@ class sfValidatorDoctrineUnique extends sfValidatorSchema
    */
   protected function doClean($values)
   {
+    @$values['email'] = strtolower($values['email']);
     $originalValues = $values;
+
+    
     $table = Doctrine_Core::getTable($this->getOption('model'));
     if (!is_array($this->getOption('column')))
     {
