@@ -171,8 +171,9 @@ function googleTranslateElementInit() {
                   
         </p>
         
-        Website www.our-feeling.com and service, carried out by "JB enterprise Bensimhon" registered under the laws of <br />
-        Switzerland, with its seat at the address: 14-16 Place de Cornavin -CH-1201 Geneve.   
+       Website www.our-feeling.com and service, carried out by "JB enterprise" registered under the laws of <br />
+Switzerland, with its seat at the address: 14-16 Place de Cornavin -CH-1201 Geneve.  
+
     </div>
 </footer><!-- #footer-->
 <div class="menu_left_poss" style="position:absolute; top:100px; left:0">
