@@ -20,9 +20,9 @@ class qregForm extends PluginsfGuardUserForm
                         $this['timer'],
                         $this['image'],
                         $this['account'],
-			$this['is_super_admin'],
+			            $this['is_super_admin'],
                         $this['is_active'],
-			$this['permissions_list'],
+			            $this['permissions_list'],
                         $this['created_at'],
                         $this['updated_at'],
                         $this['last_login'],
@@ -30,7 +30,7 @@ class qregForm extends PluginsfGuardUserForm
                         $this['is_partner'],
                         $this['pc'],
                         $this['real_name'],
-			$this['algorithm']
+			            $this['algorithm']
 
 		);
 
@@ -50,7 +50,7 @@ class qregForm extends PluginsfGuardUserForm
 
 
       $this->widgetSchema['captcha'] = new sfWidgetCaptchaGD();
-      $this->validatorSchema['captcha'] = new sfCaptchaGDValidator(array('length' => 4), array('required'=>__('Required field.')));
+      //$this->validatorSchema['captcha'] = new sfCaptchaGDValidator(array('length' => 4), array('required'=>__('Required field.')));
 
 
                 $this->widgetSchema['gender'] = new sfWidgetFormChoice(array('expanded'=>false,'choices' => array(''=>'','m'=>__('Man'), 'w'=>__('Woman'))));
@@ -64,6 +64,42 @@ class qregForm extends PluginsfGuardUserForm
   	         ));
 
 
+
+      $this->widgetSchema['first_name'] = new sfWidgetFormInputText();
+      $this->widgetSchema['last_name'] = new sfWidgetFormInputText();
+      //$this->widgetSchema['real_name'] = new sfWidgetFormInputText();
+      $this->widgetSchema['city'] = new sfWidgetFormInputText();
+      $this->widgetSchema['height'] = new sfWidgetFormChoice(array('expanded'=>false,'choices' => myUser::getHeight()));
+      $this->widgetSchema['body_type'] = new sfWidgetFormChoice(array('expanded'=>false,'choices' => myUser::getVes()));
+      $this->widgetSchema['smoker'] = new sfWidgetFormChoice(array('expanded'=>false,'choices' => myUser::getSmoker()));
+      $this->widgetSchema['drinker'] = new sfWidgetFormChoice(array('expanded'=>false,'choices' => myUser::getDrinker()));
+      $this->widgetSchema['eye_color'] = new sfWidgetFormChoice(array('expanded'=>false,'choices' => myUser::getEyeColor()));
+      $this->widgetSchema['hair_lenght'] = new sfWidgetFormChoice(array('expanded'=>false,'choices' => myUser::getHairLenght()));
+      $this->widgetSchema['hair_color'] = new sfWidgetFormChoice(array('expanded'=>false,'choices' => myUser::getHairColor()));
+
+      $this->widgetSchema['hobbies'] = new sfWidgetFormTextarea();
+      $this->widgetSchema['about_me'] = new sfWidgetFormTextarea();
+      $this->widgetSchema['about_partner'] = new sfWidgetFormTextarea();
+
+      $this->widgetSchema['relationship'] = new sfWidgetFormChoice(array('multiple'=>true,'expanded'=>true,'choices' => myUser::getRelationship()));
+
+      $this->validatorSchema ['city'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['country'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['first_name'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['last_name'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      //$this->validatorSchema ['real_name'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['height'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['body_type'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['smoker'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['eye_color'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['hair_lenght'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['hair_color'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['drinker'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['hobbies'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['about_me'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['about_partner'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+      $this->validatorSchema ['body_type'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+
       $this->widgetSchema->setLabels(array(
           'username'   => __('Login'),
           'password'   => __('Password'),
@@ -73,6 +109,7 @@ class qregForm extends PluginsfGuardUserForm
           'gender'   => __('Gender'),
           'culture'   => __('Language'),
           'captcha'   => __('Code'),
+          'body_type' => __('Weight'),
       ));
 
 

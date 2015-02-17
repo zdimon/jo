@@ -146,13 +146,34 @@ class registrationActions extends commonActions
                             //$arr = explode('/',$pars['birthday']);
 
                             $p->setBirthday($pars['birthday']['year'].'-'.$pars['birthday']['month'].'-'.$pars['birthday']['day']);
+
+                            //// доп поля
+
+                            $p->setFirstName($pars['first_name']);
+                            $p->setLastName($pars['last_name']);
+                            $p->setCity($pars['city']);
+                            $p->setCountry($pars['country']);
+                            $p->setHeight($pars['height']);
+                            $p->setBodyType($pars['body_type']);
+                            $p->setWeight($pars['body_type']);
+
+                            $p->setSmoker($pars['smoker']);
+                            $p->setEyeColor($pars['eye_color']);
+                            $p->setHairLenght($pars['hair_lenght']);
+                            $p->setHairColor($pars['hair_color']);
+                            $p->setDrinker($pars['drinker']);
+                            $p->setHobbies($pars['hobbies']);
+                            $p->setDescription($pars['about_me']);
+                            $p->setIdealMatchDescription($pars['about_partner']);
+
+                            /////
                             $p->setStatusId(3);
                             $p->save();
 
                             $this->getUser()->signin($u);
                              $this->getContext()->getUser()->signIn($u);
                              $this->getUser()->setCulture($u->getCulture());
-                             $this->redirect ( 'profile/step1');
+                             $this->redirect ( 'myphoto/index' );
 
                           ///
                           $this->getUser()->getCulture($u->getCulture());

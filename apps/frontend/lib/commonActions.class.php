@@ -316,7 +316,7 @@ class commonActions extends sfActions
         {
 
             $this->getUser ()->setFlash ( 'error', __('Only for registered users') );
-            $this->redirect('mainpage/index?pop=true');
+            $this->redirect('registration/index');
         }
 
     }

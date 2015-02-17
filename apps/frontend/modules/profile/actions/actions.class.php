@@ -381,7 +381,7 @@ class profileActions extends commonActions
   public function executeShow(sfWebRequest $request)
   {
       $this->autoenter();
-      //$this->checkAuthorization();
+      $this->checkAuthorization();
 
     //  if(!$this->getUser()->getGuardUser()->getProfile()->getIsActive()) $this->redirect('access/onlyapprove');
 

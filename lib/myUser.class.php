@@ -224,7 +224,7 @@ public static function getAgeStr($s)
 	}
 
 	public static function getVes() {
-		$arr [0] = '-';
+		$arr [''] = '-';
 		for($i = 30; $i <= 120; $i ++) {
 			$arr [$i] = $i.' kg';
 		}
