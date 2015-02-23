@@ -27,9 +27,11 @@
         <?php if($i%9==0): ?>
             <div style="clear: both"></div>
             <div align="center">
-            <div style="width: 600px; height: 70px; border: 0px solid red ">
 
-            </div>
+                    <?php if($banners): ?>
+                       <?= $banners->getIcontent()  ?>
+                    <?php endif ?>
+
             </div>
             <div style="clear: both"></div>
         <?php endif ?>
@@ -45,9 +47,7 @@
 <?php endif; ?>
 
 <?php endif ?>
-<?php if($banners): ?>
-<?= $banners->getIcontent()  ?>
-<?php endif ?>
+
 
 <!--
 <?php // $adm = ProfileTable::getAdmins(); ?>

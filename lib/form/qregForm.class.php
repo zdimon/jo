@@ -50,7 +50,7 @@ class qregForm extends PluginsfGuardUserForm
 
 
       $this->widgetSchema['captcha'] = new sfWidgetCaptchaGD();
-      //$this->validatorSchema['captcha'] = new sfCaptchaGDValidator(array('length' => 4), array('required'=>__('Required field.')));
+      $this->validatorSchema['captcha'] = new sfCaptchaGDValidator(array('length' => 4), array('required'=>__('Required field.')));
 
 
                 $this->widgetSchema['gender'] = new sfWidgetFormChoice(array('expanded'=>false,'choices' => array(''=>'','m'=>__('Man'), 'w'=>__('Woman'))));
@@ -99,6 +99,17 @@ class qregForm extends PluginsfGuardUserForm
       $this->validatorSchema ['about_me'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
       $this->validatorSchema ['about_partner'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
       $this->validatorSchema ['body_type'] = new sfValidatorString(array('required' => true),array('required'=>__('Required field.')));
+
+      $this->widgetSchema['image'] =  new sfWidgetFormInputFile();
+
+     $this->validatorSchema ['image'] = new sfValidatorFile ( array ('required' => true,
+
+        'mime_types' => 'web_images', 'max_size' => 4000000) ,
+        array ('invalid' => 'Неверный формат файла.',
+         'required' => 'Выберите изображение.',
+          'max_size' => 'Максимальный размер файла изображения 4 мегабайта',
+         'mime_types' => 'Изображение должно быть изображением.' )
+        );
 
       $this->widgetSchema->setLabels(array(
           'username'   => __('Login'),

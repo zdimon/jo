@@ -17,11 +17,7 @@
          <th>&nbsp;</th>
          <th></th>
     </tr>
- <?php 
- /*echo "<pre>";
- print_r($tbil);
-  echo "</pre>";*/
- foreach($tbil as $t): //https://www.sandbox.paypal.com/cgi-bin/webscr ?>
+ <?php foreach($tbil as $t): ?>
  
  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <tr>

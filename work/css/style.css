@@ -188,7 +188,12 @@ table.table3 a
   color: red;
 }
 
-.lady_item_right
+.table3 .lady_item_right
 {
   color: black;
+}
+
+.table3 tr
+{
+  border-bottom: 1px solid black;
 }

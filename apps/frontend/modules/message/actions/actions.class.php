@@ -893,4 +893,26 @@ class messageActions extends commonActions
         return $q;
     }
 
+
+     public function executeDelpersonal(sfWebRequest $request)
+  {
+      $this->checkAuthorization();
+     $mes = Doctrine::getTable('Hotlist')->find($request->getParameter('id'));
+     if($mes)
+     {
+
+         $mes->delete();
+     }
+
+          $it = $request->getParameter('sel');
+          foreach($it as $k=>$v)
+          {
+              $mes = Doctrine::getTable('Hotlist')->find($v);
+              $mes->delete();
+          }
+
+      $this->redirect('message/personal');
+  }
+
+
 }

@@ -30,8 +30,8 @@ class ProjectConfiguration extends sfProjectConfiguration
 
      $this->enablePlugins('sfWebBrowserPlugin');
     $this->enablePlugins('sfDateTimePlugin');
-    sfConfig::set('sf_upload_dir','/var/www/ourfeeling14/work/uploads');
-    sfConfig::set('sf_web_dir','/var/www/ourfeeling14/work');	 
+    sfConfig::set('sf_upload_dir',dirname(__FILE__).'/../work/uploads');
+    sfConfig::set('sf_web_dir',dirname(__FILE__).'/../work');
 	
 	$this->enablePlugins('sfCaptchaGDPlugin');
 	$this->enablePlugins('sfDoctrineForumPlugin');

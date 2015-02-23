@@ -2,7 +2,7 @@
 <h1><?= __('Registration') ?></h1>
 
 
-<form method="post" class="form_style validat"  action="<?php echo url_for('registration/index') ?>">
+<form method="post" class="form_style validat"  action="<?php echo url_for('registration/index') ?>" enctype="multipart/form-data" >
                     <?php echo $form->renderHiddenFields() ?>
                     <?php echo $form->renderGlobalErrors() ?>
                     <?php echo $form['_csrf_token']->render() ?>
@@ -157,7 +157,11 @@
                         <?php echo $form['about_partner']->renderError() ?>
                     </div>
 
-
+                    <div class="row">
+                        <?php echo $form['image']->renderLabel(null, array('style'=>'width: 100px','class' => 'required star short')) ?><span style="color: red">*</span>
+                        <?php echo $form['image'] ?>
+                        <?php echo $form['image']->renderError() ?>
+                    </div>
 
                     <div class="row">
                         <?php include_partial('keywords',array('id'=>1)) ?>

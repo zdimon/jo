@@ -106,11 +106,35 @@ class registrationActions extends commonActions
     $this->form = new qregForm($u);
     if ($request->isMethod ( 'post' ))
 		{
-			$this->form->bind ( $request->getParameter ( 'sf_guard_user' ) );
+			$this->form->bind ( $request->getParameter ( 'sf_guard_user' ),  $request->getFiles( 'sf_guard_user' ) );
 			if ($this->form->isValid ()) {
                           $pars = $request->getParameter ( 'sf_guard_user' );
+
+
+
+
                           $u = $this->form->save();
 
+                           //// create photo
+                           // $image = $request->getFiles( 'sf_guard_user' );
+                            //$fileName = $request->getFileName('image');
+                            //$request->moveFile('image', sfConfig::get('sf_upload_dir').'/photo/original/'.$fileName);
+                            //echo sfConfig::get('sf_upload_dir').'/photo/original/'.$file['name'];
+                            foreach($request->getFiles('sf_guard_user') as $file)
+                            {
+
+                                $fn = md5(time()).'.jpg';
+                                move_uploaded_file($file["tmp_name"], sfConfig::get('sf_upload_dir').'/photo/original/'.$fn);
+                                $i = new Photo();
+                                $i->setImage($fn);
+                                $i->setIsMain(1);
+                                $i->setUser($u);
+                                $i->setImage($fn);
+                                $i->save();
+
+                            }
+
+                           /////
 
 
                           if($u->getGender()=='w' and $u->getPartnerId()===null)
@@ -170,10 +194,15 @@ class registrationActions extends commonActions
                             $p->setStatusId(3);
                             $p->save();
 
+
+
+
+
                             $this->getUser()->signin($u);
                              $this->getContext()->getUser()->signIn($u);
                              $this->getUser()->setCulture($u->getCulture());
-                             $this->redirect ( 'myphoto/index' );
+                             $this->redirect ( 'registration/finish' );
+
 
                           ///
                           $this->getUser()->getCulture($u->getCulture());

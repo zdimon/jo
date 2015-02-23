@@ -18,14 +18,30 @@
                     </div>
 <?php else: ?>
 
-
+<?php $i=0 ?>
 <div class="lady_list">
 
     <?php foreach ($items as $k=>$v): ?>
+    <?php $i++ ?>
       <?php
          $u = Doctrine::getTable('Profile')->find($v['id']);
       ?>
       <?php  include_partial('global/common/search_item',array('profile'=>$u,'arrc'=>$arrc)); ?>
+
+              <?php if($i%9==0): ?>
+            <div style="clear: both"></div>
+            <div align="center">
+
+                    <?php if($banners): ?>
+                       <?= $banners->getIcontent()  ?>
+                    <?php endif ?>
+
+            </div>
+            <div style="clear: both"></div>
+        <?php endif ?>
+
+
+
     <?php endforeach; ?>
     
 
