@@ -17,7 +17,7 @@
          <th>&nbsp;</th>
          <th></th>
     </tr>
- <?php foreach($tbil as $t): ?>
+ <?php foreach($tbil as $t){ ?>
  
  <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_blank">
   <tr>
@@ -76,7 +76,7 @@
                 <img alt="" border="0" src="https://www.paypal.com/ru_RU/i/scr/pixel.gif" width="1" height="1">
                 </th>
   </tr></form>
- <?php endforeach; ?>
+ <?php } ?>
  
   
 
